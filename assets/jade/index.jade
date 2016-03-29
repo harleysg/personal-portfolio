@@ -1,0 +1,47 @@
+doctype html
+html(lang='es')
+	include bloques/head
+	body
+		include bloques/header
+		aside
+			.btnMenuSm
+			.menuLat.isLeft
+				a(href="")
+					span
+					| Home
+				a(href="")
+					span
+					| Profile
+				a(href="")
+					span
+					| Activities
+				a(href="")
+					span
+					| Self-check
+				a(href="")
+					span
+					| Test
+				a(href="")
+					span
+					| Log out
+		.marco
+			.container.main.pg1
+				#portada
+					.row
+						.col.s6.col.m6.col.md6.col.lg6
+							img(src="../img/01/portada.png", alt="")
+						.col.s6.col.m6.col.md6.col.lg6
+							h2.objectives
+								| Objectives:
+							ul.text-blue
+								li To understand short narratives.
+								li To talk about intentions and plans for the future.
+								li To give advice and make suggestions.
+								li To understand specific information in short phone conversations.
+			.top
+			.button
+		footer
+			.navDown
+				a.f-l.animated.prev.arrowLeft(href="#")
+				a.f-r.animated.next.arrowRight(href="02.html")
+			include bloques/footer

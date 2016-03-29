@@ -1,0 +1,216 @@
+/*
+	UTILIDADES RDW
+	==================
+*/
+.centrado {
+	display: block;
+	clear: both;
+	float: none !important;
+	margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.total {
+    width: 100%;
+    clear: both;
+}
+
+ul {
+    padding: 0;
+}
+/* Multimedia responsive */
+
+img.responsive-img,
+video.responsive-video {
+    max-width: 100%;
+    height: auto;
+}
+
+// Responsive Videos
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+
+    iframe, object, embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+}
+// configuración de botones en _mixins
+.digitalButton{
+  @include boton();
+  &.large{
+    height        : 40px;
+    font-size     : 1.3em;
+    padding       : 0 2.3;
+  }
+  &.round{
+    @include circular();
+	span {
+		text-align: center;
+		padding-top: 18%;
+		display: block;
+	}
+
+  }
+}
+
+/*// Hacks grilla */
+// float
+.f-l          {  float: left; }
+.f-r          {  float: right; }
+// alinear texto
+.ta-c         { text-align: center; }
+.ta-l         { text-align: left ; }
+.ta-r         { text-align: right; }
+// padding
+.no-padding   {padding: 0 !important; }
+// posición
+.P{
+  &Absolute{position: absolute}
+  &Relative{position: relative}
+  &Fixed{position: fixed}
+}
+// vertical align
+.va{
+	&-t{
+    vertical-align: top;
+	}
+	&-b{
+    vertical-align: bottom;
+	}
+	&-m{
+    vertical-align: middle;
+	}
+}
+/* ------------------ */
+
+/* -- DISPLAY -- */
+.D{
+	&-inline{
+	    display: inline-block;
+	    vertical-align: middle;
+	}
+	&-block{
+	    display: block;
+	    vertical-align: middle;
+	}
+}
+
+
+// alineación
+.alinear {
+	@include clear_b;
+	& .x2{
+		width: 49%;
+		display: inline-block;
+		margin: 0;
+		margin-right: 1%;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	& .x3{
+		width: 32%;
+		display: inline-block;
+		margin: 0;
+		margin-right: 1%;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	& .x4{
+		width: 23%;
+		display: inline-block;
+		margin: 0;
+		margin-right: 1%;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	& .x5{
+		width: 18%;
+		display: inline-block;
+		margin: 0;
+		margin-right: 1%;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
+.indice-parrafo {
+	.uno, .dos{
+		float: left;
+		min-height: 1px;
+		&:after{
+			content: "";
+			clear: both;
+			display: table;
+		}
+	}
+	.uno{
+		width: 5%;
+		margin: 0 1% 0 0;
+	}
+	.dos{
+		width: 93%;
+		margin: 0 0 0 1%;
+	}
+}
+// separador
+.divisor {
+	&_der {
+		border-right: 1px dashed gray;
+		&:last-child {
+			border-right: none;
+		}
+	}
+	&_izq {
+		border-left: 1px dashed gray;
+		&:last-child {
+			border-left: none;
+		}
+	}
+	&_top {
+		border-top: 1px dashed gray;
+		&:last-child {
+			border-top: none;
+		}
+	}
+	&_down {
+		border-bottom: 1px dashed gray;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}
+// Mizins y loops
+.clear_b{
+    @include clear_b;
+}
+
+@for $i from 1 through 10 {
+    /*Width ↓↓↓*/
+    .w#{$i}0 {
+        @include clear_b;
+        width: #{$i}0%;
+    }
+    /*Margins ↓↓↓*/
+    .mt#{$i}0{
+        margin-top: #{$i}0px;
+    }
+    .mb#{$i}0{
+        margin-bottom: #{$i}0px;
+    }
+    .mr#{$i}0{
+        margin-right: #{$i}0px;
+    }
+    .ml#{$i}0{
+        margin-left: #{$i}0px;
+    }
+}

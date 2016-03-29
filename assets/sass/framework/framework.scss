@@ -1,0 +1,80 @@
+/*//////////////////////////////////////////////
+// INICIO FRAMEWORK DIGITAL ////////////////////
+//////////////////////////////////////////////*/
+
+// Ancho máximo general
+	$max-width : 1100px;
+	$container-width : 892px;
+
+// Separador Principalmente para las columnas
+	$padding : 12px;
+
+// Nombres de tamaños responsive
+// pueden ser customizados para personalizar el proyecto, procurar no modificar las variables
+	//$base   	: 'base';
+	$movil  	: 's' 	;
+	$big-movil  : 'sm' 	;
+	$tablet 	: 'm'	;
+	$web    	: 'l'   ;
+	$hd     	: 'xl'  ;
+
+// Tamaños. Puede editar los nombres y las
+// medidas, añadir más o quitar.
+//$base    	: 320px,
+	$grid-breakpoints: (
+		$movil   	: 480px,
+		$big-movil  : 768px,
+		$tablet  	: 992px,
+		$web     	: 1025px,
+		$hd      	: 1200px
+	);
+	///////////////////////////////////////////////
+	// VARIABLES TIPOGRAFÍA ////////////////////////
+	///////////////////////////////////////////////
+	// Font face, import de Google Fonts o regla font-face
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,800);
+	// Variables para aplicarlas en font-weight
+		$light      : 300;
+		$normal     : 400;
+		$semi-bold  : 600;
+		$bold       : 700;
+		$extra-bold : 800;
+
+	// ESTILOS BASE
+		$body--background  : #fff;                      	// fondo para el body
+		$body--font-family : 'Open Sans', sans-serif;   	// fuente predeterminada
+		$body--color       : #333;                      	// color de texto predeterminado
+
+	// ESTILOS DE ENCABEZADOS
+		$header--font-family    : 'Open Sans', sans-serif;  // fuente para los headers (h1,h2,h3...)
+		$header--font-weight    : $normal;                  // grosor de fuente para los headers
+		$header--text-transform : normal;                   // normal, uppercase, lowercase, capitalize
+		$header--color          : #222;                     // color predeterminado de los header
+
+	// TAMAÑO DE LOS ENCABEZADOS (h1...h6)
+		$h1--font-size : 3em;
+		$h2--font-size : 2em;
+		$h3--font-size : 1.5em;
+		$h4--font-size : 1em;
+		$h5--font-size : .9em;
+		$h6--font-size : .8em;
+		$h--line-height : 110%; // Separación entre titulos
+
+	// ESTIILOS DE ENLACES
+		$link--color : initial;  // color para los enlaces
+
+	// ESTILOS DE PÁRRAFOS
+		$p--font-size   : 1em;          // Tamaño de fuente
+		$p--line-height : 110%;          // Altura de línea
+		$p--margin      : 1em;          // Separación entre un párrafo y el siguiente
+		$p--font-weight : $normal;      // Grosor predeterminado de la fuente
+// Componentes Framework
+	@import "flexbox";
+	@import "base";			// Estilos básicos para RWD
+	@import "grid";			// Núcleo de ED GRID, Grilla con base en 12 Columnas
+	@import "mixins";		// Mixins ED GRID
+	@import "desarrollo";	// Modo desarrollo
+	@import "visibilidad";	// Controlar la visibilidad
+	@import "offset";		// Offset
+	@import "utilidades";	// Adicionales
+	@import "color";	// Colores

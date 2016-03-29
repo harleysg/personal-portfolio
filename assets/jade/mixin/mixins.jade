@@ -1,0 +1,159 @@
+//- Mixinng Botiones Unir
+mixin unir(texto1,texto2)
+    .row.botonesUnir
+        .col.s5: .botonUnir_1= texto1
+        .col.s5.offset-s2: .botonUnir_2= texto2
+
+//- Mixinng Select
+mixin select(...items)
+    label.input
+        select()
+            option(hidden)
+            each item in items
+                option= item
+
+//- Mixinng Inputs
+mixin input(placeholder,valor)
+    .btnPest
+        input(placeholder=placeholder)
+
+//- Mixins botones
+mixin btnrec(etiqueta)
+    if etiqueta == 'inline'
+        span.boton.rec
+            span Record
+    else
+        .boton.rec
+            span Record
+mixin btnaudio(etiqueta)
+    if etiqueta == 'inline'
+        span.boton.audio
+            span Listen
+    else
+        div.boton.audio
+            span Listen
+mixin btncloud(etiqueta)
+    if etiqueta == 'inline'
+        span.boton.cloud
+            span Send
+    else
+        .boton.cloud
+            span Send
+mixin btncheck(etiqueta)
+    if etiqueta == 'inline'
+        span.boton.check
+            span Check Answers
+    else
+        .boton.check
+            span Answers
+mixin btnstart(etiqueta)
+    if etiqueta == 'inline'
+        span.boton.start
+            span Start Again
+    else
+        .boton.start
+            span Start Again
+mixin btnclick(etiqueta)
+    if etiqueta == 'inline'
+        span.boton.click
+            span Click Here
+    else
+        .boton.click
+            span Click Here
+mixin btnhelp(etiqueta)
+    if etiqueta == 'inline'
+        span.boton.help
+            span Help
+    else
+        .boton.help
+            span Help
+
+//- Mixins Drag and Drop
+mixin drag(texto,display)
+    if display == 'inline'
+        span.drag-cont
+            span.drag= texto
+    else
+        .drag-cont
+            span.drag= texto
+//- Mixins Botones 
+mixin validar(alineacion)
+    if alineacion == 'center'
+        .col.s12.col.m12.col.md12.col.lg12.ta-c
+            +btncheck('inline')
+            +btnstart('inline')
+    else if alineacion == 'left'
+        .col.s12.col.m12.col.md12.col.lg12.ta-l
+            +btncheck('inline')
+            +btnstart('inline')
+    else
+        .col.s12.col.m12.col.md12.col.lg12.ta-r
+            +btncheck('inline')
+            +btnstart('inline')
+//- Mixin box
+mixin boxLeftYellow(texto)
+        .boxLeft.yellow
+                span 
+                        b= texto
+mixin boxRightYellow(texto)
+        .boxRight.yellow
+                span 
+                        b= texto
+mixin boxLeftPurple(texto)
+        .boxLeft.purple
+                span 
+                        b= texto
+mixin boxRightPurple(texto)
+        .boxRight.purple
+                span 
+                        b= texto
+mixin boxLeftBlue(texto)
+        .boxLeft.blue
+                span 
+                        b= texto
+mixin boxRightBlue(texto)
+        .boxRight.blue
+                span 
+                        b= texto
+mixin boxLeftOrange(texto)
+        .boxLeft.orange
+                span 
+                        b= texto
+mixin boxRightOrange(texto)
+        .boxRight.orange
+                span 
+                        b= texto
+mixin boxLeftPink(texto)
+        .boxLeft.pink
+                span 
+                        b= texto
+mixin boxRightPink(texto)
+        .boxRight.pink
+                span 
+                        b= texto
+mixin boxLeftOrange2(texto)
+        .boxLeft.orange2
+                span 
+                        b= texto
+mixin boxRightOrange2(texto)
+        .boxRight.orange2
+                span 
+                        b= texto
+mixin boxLeftGreen(texto)
+        .boxLeft.green
+                span 
+                        b= texto
+mixin boxRightGreen(texto)
+        .boxRight.green
+                span 
+                        b= texto
+//- mixin sorteable
+
+mixin sortableLine (...items)
+        ul.sortable.sortableLine
+                each item in items
+                      li= item
+mixin sortableList (...items)
+        ul.sortable
+                each item in items
+                      li= item

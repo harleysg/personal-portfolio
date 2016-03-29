@@ -1,0 +1,87 @@
+// VARIABLES DEL TEMA
+
+///////////////////////////////////////////////
+// Variables tipografía ///////////////////////
+///////////////////////////////////////////////
+
+// Font face. Incluya el import de Google Fonts o su regla font-face
+// Lo usual es una fuente para los textos y otra para los títulos
+    /*//////////////////////////////////////////////
+    // Font face tema ///////////////////////
+    //////////////////////////////////////////////*/
+    @import url(http://fonts.googleapis.com/css?family=Handlee);
+    @import url(http://fonts.googleapis.com/css?family=Sniglet);
+    @import url(http://fonts.googleapis.com/css?family=Alegreya);
+    @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,700);
+
+    @font-face {
+      font-family: 'hobgo';
+      src: url("../fonts/hobgo/hobgo.eot");
+      src: url("../fonts/hobgo/hobgo.eot?#iefix") format("embedded-opentype"),
+           url("../fonts/hobgo/hobgo.ttf") format("truetype"),
+           url("../fonts/hobgo/hobgo.svg#hobgo") format("svg");
+      font-weight: normal;
+      font-style: normal; }
+
+    @font-face {
+      font-family: 'alegreya-Thin';
+      src: url("../fonts/alegreya/alegreya-Thin.eot");
+      src: url("../fonts/alegreya/alegreya-Thin.eot?#iefix") format("embedded-opentype"),
+           url("../fonts/alegreya/alegreya-Thin.ttf") format("truetype"),
+           url("../fonts/alegreya/alegreya-Thin.svg#alegreya-Thin") format("svg");
+      font-weight: normal;
+      font-style: normal; }
+
+    @font-face {
+      font-family: 'Handlee';
+      src: url("../fonts/handlee/handlee.eot");
+      src: url("../fonts/handlee/handlee.eot?#iefix") format("embedded-opentype"),
+           url("../fonts/handlee/handlee.ttf") format("truetype"),
+           url("../fonts/handlee/handlee.svg#handlee") format("svg");
+      font-weight: normal;
+      font-style: normal; }
+
+    ///////////////////////////////////////////////
+    // Variables tipografía ///////////////////////
+    ///////////////////////////////////////////////
+        $Alegreya: 'Alegreya Sans', sans-serif;
+        $alegreya-Thin: 'alegreya-Thin', sans-serif;
+        $Handlee: 'Handlee', sans-serif;
+        $hobgo: 'hobgo', sans-serif;
+        $sizeParrafo: 23px;
+
+    // Variables para aplicarlas en font-weight
+        $light      : 300;
+        $normal     : 400;
+        $semi-bold  : 600;
+        $bold       : 700;
+        $extra-bold : 800;
+
+    // ESTILOS BASE
+        $body--background  : #fff;                      // fondo para el body
+        $body--font-family : $Alegreya;                 // fuente predeterminada, // 'Open Sans', sans-serif;
+        $body--color       : #333;                      // color de texto predeterminado
+
+    // ESTILOS DE ENCABEZADOS
+        $header--font-family    :'Open Sans', sans-serif;  // fuente para los headers (h1,h2,h3...)
+        $header--font-weight    : $normal;                    // grosor de fuente para los headers
+        $header--text-transform : normal;                   // normal, uppercase, lowercase, capitalize
+        $header--color          : #222;                     // color predeterminado de los header
+
+    // TAMAÑO DE LOS ENCABEZADOS (h1...h6)
+        $h1--font-size : 2em;
+        $h2--font-size : 1.6em;
+        $h3--font-size : 1.3em;
+        $h4--font-size : 1em;
+        $h5--font-size : .9em;
+        $h6--font-size : .8em;
+        $h--line-height : 110%; // Separación entre
+
+    // ESTIILOS DE ENLACES
+        $link--color : initial;  // color para los enlaces
+
+    // ESTILOS DE PÁRRAFOS
+        $p--font-size   : 1em;          // Tamaño de fuente
+        $p--line-height : 110%;          // Altura de línea
+        $p--margin      : 1em;          // Separación entre un párrafo y el siguiente
+        $p--font-weight : $normal;      // Grosor predeterminado de la fuente
