@@ -1,6 +1,6 @@
 // Definir offsets (los han pedido hace mucho)
 @each $size, $screen-size in $grid-breakpoints{
-  // Loops para tamaños en porcentajes y fracciones
+  // Loops para tamaï¿½os en porcentajes y fracciones
   @media all and (min-width: $screen-size){
     // Tamanos en porcentajes
     @for $i from 1 through 12 {
