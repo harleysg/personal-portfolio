@@ -1,0 +1,100 @@
+// Compile este archivo en ../css/estilos.css
+// Importe en este archivo los partials de css de su proyecto
+
+///////////////////////////////////////////////
+// Variables de Color /////////////////////////
+///////////////////////////////////////////////
+
+	// PALETA DE COLOR
+
+		// Grises
+		$white		: #fff;
+		$black		: #000;
+		$gray		: #B1B2B2;
+		$gray2		: #CCCBCB;
+		$gray3		: #A6A6A2;
+		$gray4		: #6B6D6C;
+		$gray5		: #ECEDEF;
+		// Amarillos
+		$yellow		: #F7941E;
+		$yellow2	: #F8CD89;
+		$yellow3	: #FECB04;
+		$yellow4	: #F9DE85;
+		// Naranjas
+		$orange		: #F26323;
+		$orange2	: #F3B38B;
+		$naranja	: #F58220;
+		$naranja2	: #F5B369;
+		$naranja3	: #EE8600;
+		$cafe		: #A35519;
+		// Rojos
+		$red		: #BE1E2D;
+		$red2		: #DB6F89;
+		$red3		: #591613;
+		$lila		: #A52082;
+		$lila2		: #D083B8;
+		$mora		: #582E91;
+		$mora2		: #9D79B3;
+		// Azules
+	    $darkBlue   : #27677b;
+	    $lightBlue  : #41a5c6;
+		$blue		: #27AAE1;
+		$blue2		: #84CBEF;
+		$blue3		: #578DA1;
+		$blue4		: #002933;
+		$blue5		: #27A29B;
+		$blue6		: #2548B2;
+		$blue7		: #28679C;
+		$blue8		: #00ABA3;
+		$blue9		: #386482;
+		// Verdes
+		$green		: #7F8D2C;
+		$green2		: #25A237;
+
+		// Colores para respuetas
+		$bien : #AFCA0B;
+		$mal : #C41C1B;
+
+        ////////////////////////////////////////////////
+        // Librerias ///////////////////////////////////
+        ////////////////////////////////////////////////
+
+        /*//////////////////////////////////////////////
+        // INICIO LIBRERIA NORMALIZE //////////////////
+        //////////////////////////////////////////////*/
+            @import "libreria/normalize/normalize"; // reset que estandariza visibilidad en los navegadores
+        /*//////////////////////////////////////////////
+        // FIN LIBRERIA NORMALIZE //////////////////////
+        //////////////////////////////////////////////*/
+
+        // INICIO FRAMEWORK ////////////////////////////
+            @import "framework/framework";
+
+        /*//////////////////////////////////////////////
+        // INICIO COMPONENTES MATERIALIZE //////////////
+        //////////////////////////////////////////////*/
+            @import "libreria/materialize/global";
+            @import "libreria/materialize/variables";
+            @import "libreria/materialize/tooltip";
+            @import "libreria/materialize/modal";
+            @import "libreria/materialize/slider";
+            @import "libreria/materialize/dropdown";
+        /*//////////////////////////////////////////////
+        // FIN COMPONENTES MATERIALIZE /////////////////
+        //////////////////////////////////////////////*/
+        // Tema. Los componentes básicos de todo proyecto
+            @import "tema/variables";     // Principalmente variables tipográfica
+            @import "tema/base";          // organizar clases y estilos generales del proyecto
+        	// Elementos del proyecto, organizar por clases de elementos
+            @import "tema/tema";
+            @import "tema/elementos/header";        // Organizar todos los header del proyecto
+            @import "tema/elementos/footer";        // Organizar todos los footer del proyecto
+            @import "tema/elementos/botones";       //
+            @import "tema/elementos/formularios";   //
+            @import "tema/elementos/imagenes";      //
+            @import "tema/elementos/menus";
+            @import "tema/elementos/icons";
+            @import "tema/elementos/ejercicios";
+            @import "tema/elementos/tablas";
+            @import "tema/elementos/utilidades";
+            @import "tema/elementos/cajas";
