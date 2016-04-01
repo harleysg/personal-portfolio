@@ -12,3 +12,16 @@
 	min-height: 40px;
 	margin: 5px 0;
 }
+
+
+.container{
+	&.main{
+		.row{
+			.col{
+				&[class^='s']{}
+				&[class^='sm']{}
+				&[class^='m']{}
+			}
+		}
+	}
+}

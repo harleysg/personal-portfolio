@@ -2,9 +2,9 @@
 @each $size, $screen-size in $grid-breakpoints{
   // Loops para tamaños en porcentajes y fracciones
   @media all and (min-width: $screen-size){
-    // Tamaños en porcentajes
+    // Tamanos en porcentajes
     @for $i from 1 through 12 {
-      .col.offset-#{$size}#{$i}{
+      .offset-#{$size}#{$i}{
         margin-left: unquote($i*8.33333333333333 + "%");
       }
     }

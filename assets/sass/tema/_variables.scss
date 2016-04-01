@@ -9,7 +9,7 @@
     /*//////////////////////////////////////////////
     // Font face tema ///////////////////////
     //////////////////////////////////////////////*/
-
+    //
     ///////////////////////////////////////////////
     // Variables tipografía ///////////////////////
     ///////////////////////////////////////////////
@@ -34,7 +34,7 @@
         $header--text-transform : normal;                   // normal, uppercase, lowercase, capitalize
         $header--color          : #222;                     // color predeterminado de los header
 
-    // TAMAÑO DE LOS ENCABEZADOS (h1...h6)
+    // TAMAÑO DE LOS ENCABEZADOS (h1...h6)  -> Personalizar si no se desea usar los tamaños fijos del framework
         $h1--font-size : 2em;
         $h2--font-size : 1.6em;
         $h3--font-size : 1.3em;
