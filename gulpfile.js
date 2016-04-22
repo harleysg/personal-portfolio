@@ -1,8 +1,8 @@
-var gulp = require('gulp');
-var webserver = require('gulp-webserver');
-var sass = require('gulp-sass');
-var path = require('path');
-var jade = require('gulp-jade');
+var gulp = require('gulp'),
+    webserver = require('gulp-webserver'),
+    sass = require('gulp-sass'),
+    path = require('path'),
+    jade = require('gulp-jade');
 
 // Config Sass
 
@@ -29,15 +29,15 @@ gulp.task('templates', function() {
 });
 
 //  conf web server
-gulp.task('server', function() {
+
+gulp.task('webserver', function() {
   gulp.src('')
     .pipe(webserver({
-    //   host: '192.168.12.144',
       port: 7777,
-      livereload: true
+      // open: true,
+      // livereload: true
     }));
 });
-
 
 // wacth
 
@@ -47,4 +47,4 @@ gulp.task('watch', function() {
 })
 
 // tareas default
-gulp.task('default', ['sass','watch','server','templates']);
+gulp.task('default', ['sass','watch','webserver','templates']);

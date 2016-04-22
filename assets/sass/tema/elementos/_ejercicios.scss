@@ -1,199 +1,93 @@
-/* CARTAS */
-.card{
-    width: 170px;
-    height: 217px;
-    .carta{
-        position: relative;
-        color: #fff;
-        width: 170px;
-        height: 217px;
-        cursor: pointer;
-        display: inline-block;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-image: url(../img/carta1.png);
-        background-size: contain;
-        filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
-        -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
-        font-size: 19px;
-        p{
-            display: none;
-            position: absolute;
-            top: 30px;
-            left: 22px;
-            width: 130px;
-            font-size: 19px;
-        }
-        &.sel{
-            background-image: url(../img/carta-sel.png);
-            p{
-                display: block;
-            }
-        }
-        &.bien{
-            background-image: url(../img/carta-bien.png);
-            p{
-                display: block;
-            }
-        }
-        &.mal{
-            background-image: url(../img/carta-mal.png);
-            p{
-                display: block;
-            }
-        }
-    }
-}
-
-/* CRUCIGRAMA */
-table.crucigrama{
-    width: auto;
-    display: table;
-    tr{
-        td{
-            text-align: center;
-            border: none;
-            background-color: transparent;
-            padding: 2px;
-            width: 30px !important;
-            height: 30px !important;
-            // padding: 2px;
-            strong {
-                color: $white;
-                width: 35px;
-                height: 35px;
-                // padding-top: 4px;
-                display: inline-block;
-                background-color: $mora;
-            }
-            input {
-                // max-width: 35px;
-                width: 35px;
-                height: 35px;
-                // border-radius: 5px;
-                border: solid 2px $blue5;
-                padding: 0px;
-                text-align: center;
-            }
-        }
-    }
-}
-
-/* DRAG & DROP */
-span.drag-cont, span.drop{
-    display: inline-block;
-	margin: 0 5px;
-    vertical-align: middle;
-}
-.drag-cont,
-.drag,
-.drop{
-	min-height: 30px;
-	min-width: 144px;
-	display: block;
-    font-size: 18px;
-	border-radius: 7px;
-	text-align: center;
-	color: #fff;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-	user-select: none;
-}
-.drag-cont,
-.drop {
-    margin: 0 5px;
+@import "../../framework/flexbox";
+@import "../../framework/mixins";
+.contenido{
+    width: 800px;
+    margin: auto;
     position: relative;
-    background-color: #F2F1EF;
-    border: dashed 2px #602D91;
-    .drag{
-        padding: 2px 5px;
-        width: 100%;
-		margin: 0 0;
-        background-color: #602D91;
-        cursor: move;
-        z-index: 10;
-        -webkit-box-shadow: 0px 0px 0px 2px rgba(96, 45, 145, 1);
-        -moz-box-shadow:    0px 0px 0px 2px rgba(96, 45, 145, 1);
-        box-shadow:         0px 0px 0px 2px rgba(96, 45, 145, 1);
-        &.bien{
-            font-weight: bold;
-            cursor: default;
-            background-color: $bien;
-            border: solid 1px $green;
+  .contenido_titulo{
+    position: relative;
+    min-height: 70px;
+    // background-image: src('../img/raya_cabeza.jpg');
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      background-color: gray;
+      height: 5px;
+      width: 100%;
+    }
+  }
+  .contenido_ejercicio{
+    position: relative;
+    width: 100%;
+    #slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 20px auto 0 auto;
+      overflow: hidden;
+      border-radius: 4px;
+      // height: 350px;
+      ul {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        height: 350px;
+        list-style: none;
+        li {
+          position: relative;
+          display: block;
+          float: left;
+          margin: 0;
+          padding: 0;
+          width: 780px;
+          height: 350px;
+          background: #ccc;
+          text-align: center;
         }
-        &.mal{
-            font-weight: bold;
-            cursor: default;
-            background-color: $mal;
-            border: solid 1px $red;
-        }
+      }
     }
-}
+    a.navIzq, a.navDer {
+      position: absolute;
+      top: 180px;
+      left: auto;
+      right: auto;
+      z-index: 999;
+      display: block;
+      // padding: 4% 3%;
+      width: 50px;
+      height: 50px;
+      // background: #ff6357;
 
-
-/* -- PAINT -- */
-canvas#colors_sketch, canvas#colors_sketch2, .tool{
-    @extend .D-inline;
-}
-canvas#colors_sketch, canvas#colors_sketch2, .img-sample{
-    background-color: $gray5;
-    border: solid 1px #6D6E70;
-    max-width: 100%;
-    min-height: 380px;
-    border-radius: 7px;
-}
-// sortable
-.sortable{
-    padding: 0 !important;
-    margin: 0 !important;
-    height: 32px;
-    position: relative !important;
-    li{
-        height: 32px;
-        width: 105px;
-        line-height: 32px;
-        background-color: $mora;
-        color: #fff;
-        border-radius: 5px;
-        text-align: center;
-        margin: 2px 5px;
-        vertical-align: top;
-		cursor: move;
-		&:active{
-			background-color: #F8B525;
-		}
-		&.ui-sortable-handle{
-			&.ui-sortable-placeholder{
-				visibility: visible !important;
-				background: $white;
-				border: 1px dashed $mora;
-			}
-		}
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      opacity: 0.8;
+      cursor: pointer;
     }
-}
-.sortableLine{
-    li{
-        display: inline-block;
-    }
-}
 
-.sortableLine, .sortable {
-	li {
-		&.bien{
-			color: $white;
-			font-weight: bold;
-			background-color: $bien;
-		}
-		&.mal{
-			color: $white;
-			font-weight: bold;
-			background-color: $mal;
-		}
-		&.sel{
-			color: $white;
-			font-weight: bold;
-			background-color: $orange;
-		}
-	}
+    a.navIzq:hover, a.navDer:hover {
+      opacity: 1;
+      -webkit-transition: all 0.2s ease;
+    }
+
+    a.navIzq {
+      left: 0;
+      border-radius: 0 2px 2px 0;
+      -webkit-mask-box-image: url('../img/arrows-l.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    a.navDer {
+      right: 0;
+      border-radius: 2px 0 0 2px;
+      -webkit-mask-box-image: url('../img/arrows-r.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
 }

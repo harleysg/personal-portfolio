@@ -6,7 +6,7 @@ html(lang='es')
 		.container.main
 			.row
 				.col.m12.bm8.f-r
-					h1.ta-r Hello Word
+					h1.ta-r Hello Wordas asd
 				.col.m12.bm8.f-r
 					h3.ta-r Objectives:
 					p.ta-r  Este es la prueba inical de un framework tipo "frankenstein", que es la personalización de
@@ -15,5 +15,64 @@ html(lang='es')
 						strong: i: a(href="https://github.com/escueladigital/ED-GRID") Ed Grid
 				.col.total
 					h4.text-red.ta-r: i HarleySG
+			- var slider = 11;
+			- var palabras = ['friend from high school ', 'friend from college', 'friend from work', 'friend from the gym (other place)', 'best friend','boyfriend and girlfriend','classmate', 'roommate', 'teammate', 'boss', 'co-worker'];
+				.row.contenido
+					.row.contenido_titulo
+						h4 Simple Slider Custom.
+					.row.contenido_ejercicio
+						.col.m12
+							.col.m1.f-l: a.navIzq
+							#slider
+								ul
+									- for (var i = 0; i < slider; i++)
+										li.row
+											.col.total.no-padding: img.responsive-img.centrado.w100(src='https://unsplash.it/780/350?image=1041')
+											//- .col.m8: img.responsive-img.centrado(src='https://unsplash.it/319/319?image=1074')
+											//- .col.m4
+												.btnRec: span Listen
+												.caja_texto
+													.texto: span= palabras[i]
+							.col.m1.f-r: a.navDer
 		footer
 			include bloques/footer
+		//script.
+			$('document').ready(function () {
+				var slideCount = $('#slider ul li').length;
+				var slideWidth = $('#slider ul li').width();
+				var slideHeight = $('#slider ul li').height();
+				var sliderUlWidth = slideCount * slideWidth;
+				console.log('cantidad: '+slideCount+', Ancho: '+slideWidth+', Alto: '+slideHeight+', ancho Ul: '+sliderUlWidth);
+
+				$('#slider').css({ width: slideWidth, height: slideHeight });
+
+				$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+
+			    $('#slider ul li:last-child').prependTo('#slider ul');
+
+			    function moveLeft() {
+			        $('#slider ul').animate({
+			            left: + slideWidth
+			        }, 200, function () {
+			            $('#slider ul li:last-child').prependTo('#slider ul');
+			            $('#slider ul').css('left', '');
+			        });
+			    };
+
+			    function moveRight() {
+			        $('#slider ul').animate({
+			            left: - slideWidth
+			        }, 200, function () {
+			            $('#slider ul li:first-child').appendTo('#slider ul');
+			            $('#slider ul').css('left', '');
+			        });
+			    };
+
+			    $('a.navIzq').click(function () {
+			        moveLeft();
+			    });
+
+			    $('a.navDer').click(function () {
+			        moveRight();
+			    });
+			});

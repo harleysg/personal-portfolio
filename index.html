@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>HarleySG - Portfolio</title>
     <link rel="stylesheet" href="../../assets/css/estilos.css">
-    <link rel="stylesheet" href="../../assets/css/module-3.css">
     <link rel="stylesheet" href="../../assets/css/animated.css">
   </head>
   <body>
@@ -14,7 +13,7 @@
     <div class="container main">
       <div class="row">
         <div class="col m12 bm8 f-r">
-          <h1 class="ta-r">Hello Word</h1>
+          <h1 class="ta-r">Hello Wordas asd</h1>
         </div>
         <div class="col m12 bm8 f-r">
           <h3 class="ta-r">Objectives:</h3>
@@ -24,14 +23,60 @@
           <h4 class="text-red ta-r"><i>HarleySG</i></h4>
         </div>
       </div>
+      <div class="row contenido">
+        <div class="row contenido_titulo">
+          <h4>Simple Slider Custom.</h4>
+        </div>
+        <div class="row contenido_ejercicio">
+          <div class="col m12">
+            <div class="col m1 f-l"><a class="navIzq"></a></div>
+            <div id="slider">
+              <ul>
+                <li class="row">
+                  <div class="col total no-padding"><img src="https://unsplash.it/780/350?image=1041" class="responsive-img centrado w100"></div>
+                </li>
+                <li class="row">
+                  <div class="col total no-padding"><img src="https://unsplash.it/780/350?image=1041" class="responsive-img centrado w100"></div>
+                </li>
+                <li class="row">
+                  <div class="col total no-padding"><img src="https://unsplash.it/780/350?image=1041" class="responsive-img centrado w100"></div>
+                </li>
+                <li class="row">
+                  <div class="col total no-padding"><img src="https://unsplash.it/780/350?image=1041" class="responsive-img centrado w100"></div>
+                </li>
+                <li class="row">
+                  <div class="col total no-padding"><img src="https://unsplash.it/780/350?image=1041" class="responsive-img centrado w100"></div>
+                </li>
+                <li class="row">
+                  <div class="col total no-padding"><img src="https://unsplash.it/780/350?image=1041" class="responsive-img centrado w100"></div>
+                </li>
+                <li class="row">
+                  <div class="col total no-padding"><img src="https://unsplash.it/780/350?image=1041" class="responsive-img centrado w100"></div>
+                </li>
+                <li class="row">
+                  <div class="col total no-padding"><img src="https://unsplash.it/780/350?image=1041" class="responsive-img centrado w100"></div>
+                </li>
+                <li class="row">
+                  <div class="col total no-padding"><img src="https://unsplash.it/780/350?image=1041" class="responsive-img centrado w100"></div>
+                </li>
+                <li class="row">
+                  <div class="col total no-padding"><img src="https://unsplash.it/780/350?image=1041" class="responsive-img centrado w100"></div>
+                </li>
+                <li class="row">
+                  <div class="col total no-padding"><img src="https://unsplash.it/780/350?image=1041" class="responsive-img centrado w100"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="col m1 f-r"><a class="navDer"></a></div>
+          </div>
+        </div>
+      </div>
     </div>
     <footer>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script src="../../assets/js/jquery.bxslider.min.js"></script>
-      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-      <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.19/dist/jquery.flip.min.js"></script>
-      <script src="../../assets/js/Materialize/materialize.min.js"></script>
-      <script src="../../assets/js/bootstrap_dropDown.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <!--script(src="//code.jquery.com/ui/1.11.2/jquery-ui.js")-->
+      <!--script(src='https://cdn.rawgit.com/nnattawat/flip/v1.0.19/dist/jquery.flip.min.js')-->
+      <!--script(src='../../assets/js/Materialize/materialize.min.js')-->
       <script src="../../assets/js/Materialize/velocity.min.js"></script>
       <script src="../../assets/js/Materialize/carousel.js"></script>
       <script src="../../assets/js/Materialize/dropdown.js"></script>
@@ -40,8 +85,49 @@
       <script src="../../assets/js/Materialize/tooltip.js"></script>
       <script src="../../assets/js/Materialize/initial.js"></script>
       <script src="../../assets/js/frontEnd.js"></script>
-      <script src="../../assets/js/backEnd.js"></script>
-      <script src="../../assets/js/elementos.js"></script>
+      <!--script(src='../../assets/js/backEnd.js')-->
+      <!--script(src='../../assets/js/elementos.js')-->
     </footer>
+    <!--script.
+    $('document').ready(function () {
+    	var slideCount = $('#slider ul li').length;
+    	var slideWidth = $('#slider ul li').width();
+    	var slideHeight = $('#slider ul li').height();
+    	var sliderUlWidth = slideCount * slideWidth;
+    	console.log('cantidad: '+slideCount+', Ancho: '+slideWidth+', Alto: '+slideHeight+', ancho Ul: '+sliderUlWidth);
+    
+    	$('#slider').css({ width: slideWidth, height: slideHeight });
+    
+    	$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+    
+        $('#slider ul li:last-child').prependTo('#slider ul');
+    
+        function moveLeft() {
+            $('#slider ul').animate({
+                left: + slideWidth
+            }, 200, function () {
+                $('#slider ul li:last-child').prependTo('#slider ul');
+                $('#slider ul').css('left', '');
+            });
+        };
+    
+        function moveRight() {
+            $('#slider ul').animate({
+                left: - slideWidth
+            }, 200, function () {
+                $('#slider ul li:first-child').appendTo('#slider ul');
+                $('#slider ul').css('left', '');
+            });
+        };
+    
+        $('a.navIzq').click(function () {
+            moveLeft();
+        });
+    
+        $('a.navDer').click(function () {
+            moveRight();
+        });
+    });
+    -->
   </body>
 </html>

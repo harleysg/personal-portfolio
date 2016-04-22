@@ -1937,3 +1937,77 @@ pre {
   color: #FFF;
   min-height: 40px;
   margin: 5px 0; }
+
+/* BOTONES */
+.contenido {
+  width: 800px;
+  margin: auto;
+  position: relative; }
+  .contenido .contenido_titulo {
+    position: relative;
+    min-height: 70px; }
+    .contenido .contenido_titulo:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      background-color: gray;
+      height: 5px;
+      width: 100%; }
+  .contenido .contenido_ejercicio {
+    position: relative;
+    width: 100%; }
+    .contenido .contenido_ejercicio #slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 20px auto 0 auto;
+      overflow: hidden;
+      border-radius: 4px; }
+      .contenido .contenido_ejercicio #slider ul {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        height: 350px;
+        list-style: none; }
+        .contenido .contenido_ejercicio #slider ul li {
+          position: relative;
+          display: block;
+          float: left;
+          margin: 0;
+          padding: 0;
+          width: 780px;
+          height: 350px;
+          background: #ccc;
+          text-align: center; }
+    .contenido .contenido_ejercicio a.navIzq, .contenido .contenido_ejercicio a.navDer {
+      position: absolute;
+      top: 180px;
+      left: auto;
+      right: auto;
+      z-index: 999;
+      display: block;
+      width: 50px;
+      height: 50px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      opacity: 0.8;
+      cursor: pointer; }
+    .contenido .contenido_ejercicio a.navIzq:hover, .contenido .contenido_ejercicio a.navDer:hover {
+      opacity: 1;
+      -webkit-transition: all 0.2s ease; }
+    .contenido .contenido_ejercicio a.navIzq {
+      left: 0;
+      border-radius: 0 2px 2px 0;
+      -webkit-mask-box-image: url("../img/arrows-l.svg");
+      background-repeat: no-repeat;
+      background-position: center center; }
+    .contenido .contenido_ejercicio a.navDer {
+      right: 0;
+      border-radius: 2px 0 0 2px;
+      -webkit-mask-box-image: url("../img/arrows-r.svg");
+      background-repeat: no-repeat;
+      background-position: center center; }
