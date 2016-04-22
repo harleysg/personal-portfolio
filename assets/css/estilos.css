@@ -1962,7 +1962,7 @@ pre {
       left: 0;
       right: 0;
       bottom: 0;
-      margin: 20px auto 0 auto;
+      margin: 0 auto 0 auto;
       overflow: hidden;
       border-radius: 4px; }
       .contenido .contenido_ejercicio #slider ul {
@@ -1983,13 +1983,13 @@ pre {
           text-align: center; }
     .contenido .contenido_ejercicio a.navIzq, .contenido .contenido_ejercicio a.navDer {
       position: absolute;
-      top: 180px;
+      top: 0;
       left: auto;
       right: auto;
       z-index: 999;
       display: block;
       width: 50px;
-      height: 50px;
+      height: 350px;
       color: #fff;
       text-decoration: none;
       font-weight: 600;
@@ -1998,16 +1998,11 @@ pre {
       cursor: pointer; }
     .contenido .contenido_ejercicio a.navIzq:hover, .contenido .contenido_ejercicio a.navDer:hover {
       opacity: 1;
-      -webkit-transition: all 0.2s ease; }
+      -webkit-transition: all 0.2s ease;
+      background: rgba(32, 32, 32, 0.2); }
     .contenido .contenido_ejercicio a.navIzq {
       left: 0;
-      border-radius: 0 2px 2px 0;
-      -webkit-mask-box-image: url("../img/arrows-l.svg");
-      background-repeat: no-repeat;
-      background-position: center center; }
+      border-radius: 0 2px 2px 0; }
     .contenido .contenido_ejercicio a.navDer {
       right: 0;
-      border-radius: 2px 0 0 2px;
-      -webkit-mask-box-image: url("../img/arrows-r.svg");
-      background-repeat: no-repeat;
-      background-position: center center; }
+      border-radius: 2px 0 0 2px; }
