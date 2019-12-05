@@ -1,50 +1,45 @@
-var gulp = require('gulp'),
-    webserver = require('gulp-webserver'),
-    sass = require('gulp-sass'),
-    path = require('path'),
-    jade = require('gulp-jade');
+'use strict';
 
-// Config Sass
+const notify = require('gulp-notify');
 
-gulp.task('sass', function () {
-  return gulp.src('assets/sass/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    //Destino
-    .pipe(gulp.dest('assets/css/'));
+global.$ = {
+    gulp: require('gulp'),
+    browser: require('browser-sync').create(),
+    del: require('del'),
+    path: require('./settings'),
+    task: require('./gulp'),
+    hasError: function(error) {
+        var args = Array.prototype.slice.call(arguments);
+        notify
+            .onError({
+                title: 'Compile Error',
+                message: '<%= error.message %>',
+            })
+            .apply(this, args);
+
+        this.emit('end');
+    },
+};
+
+$.task.forEach(function(taskPath) {
+    require(taskPath)();
 });
 
+$.gulp.task('dev', $.gulp.series('clean', $.gulp.parallel('pug', 'scss:dev', 'js:dev')));
 
-// Conf jade
+$.gulp.task(
+    'build',
+    $.gulp.series(
+        'clean',
+        $.gulp.parallel(
+            'pug',
+            'scss:build',
+            'js:build'
+            // 'git',
+        )
+    )
+);
 
-gulp.task('templates', function() {
-  var YOUR_LOCALS = {};
+$.gulp.task('develop', $.gulp.series('build', $.gulp.parallel('watch:develop', 'serve')));
 
-  gulp.src('assets/jade/*.jade')
-  .pipe(jade({
-  locals: YOUR_LOCALS,
-        pretty: true
-  }))
-  // destino
-  .pipe(gulp.dest('./'))
-});
-
-//  conf web server
-
-gulp.task('webserver', function() {
-  gulp.src('')
-    .pipe(webserver({
-      port: 7777,
-      // open: true,
-      // livereload: true
-    }));
-});
-
-// wacth
-
-gulp.task('watch', function() {
-  gulp.watch('assets/jade/*.jade',['templates']);
-  gulp.watch('assets/sass/*.scss', ['sass']);
-})
-
-// tareas default
-gulp.task('default', ['sass','watch','webserver','templates']);
+$.gulp.task('default', $.gulp.series('dev', $.gulp.parallel('watch', 'serve')));

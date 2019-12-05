@@ -1,0 +1,76 @@
+/* ---------------------------------- */
+@import './section/index';
+@import './header/index';
+
+.o- {
+    &main {
+        width: 100%;
+        height: 100%;
+    }
+    &logo {
+        max-width: 4rem;
+        width: 100%;
+    }
+    &menu {
+        width: 100%;
+        max-width: 500px;
+        &_btn {
+            @extend .o-header_btn;
+            max-width: 3rem;
+            opacity: 0;
+            display: none;
+        }
+        &_options {
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+            &-item {
+                list-style-type: none;
+                font-family: var(--font-medium);
+                position: relative;
+                padding-bottom: 3px;
+                display: inline-flex;
+                overflow: hidden;
+                text-transform: uppercase;
+                font-size: 0.72rem;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: auto;
+                    bottom: 3px;
+                    left: -100%;
+                    background-color: var(--color-a);
+                    width: 100%;
+                    height: 3px;
+                    transition: left 0.5s cubic-bezier(0.37, 0.01, 0, 0.98);
+                }
+                &:hover {
+                    &::after {
+                        left: -13%;
+                    }
+                }
+            }
+            &-link {
+                text-decoration: none;
+                color: var(--theme-menu-link-color);
+                transition: color 0.5s;
+            }
+        }
+    }
+    &article {
+        padding: 2vh 4vw;
+    }
+    &wrapper {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+    &footer {
+        padding: 5vw 0 1vh;
+        width: 100%;
+        min-height: 300px;
+    }
+}

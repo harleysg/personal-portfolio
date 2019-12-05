@@ -1,0 +1,52 @@
+include ./views/shared/_mixin
+<!DOCTYPE html>
+html(lang="en")
+    block config
+        -var mainClass = 'on-index'
+        -var data = 'index'
+        -var menu = [ {"link": '#about', "text": 'nosotros'}, {"link": '#works', "text": 'trabajos'}, {"link": '#enfoque', "text": 'enfoque'}, {"link": '#contact', "text": 'contacto'}]
+        include ./views/shared/_head
+    body
+        main(id="app" class="o-main"+' '+mainClass)
+            include ./views/shared/_header
+            |
+            include ./views/templates/index/_welcome
+            |
+            //- include ./views/templates/index/_works
+            |
+            //- include ./views/templates/index/_enfoque
+            |
+            include ./views/templates/index/_founders
+            |
+            //- include ./views/templates/index/_contact
+            |
+            include ./views/shared/_footer
+            |
+        div(class="mouse-tracker")
+        |
+        include ./views/shared/_append
+        |
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js")
+        script.
+
+            document.addEventListener('DOMContentLoaded', () => {
+                var swiper = new Swiper('.blog-slider', {
+                    spaceBetween: 90,
+                    effect: 'fade',
+                    loop: true,
+                    mousewheel: false,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    autoplay: {
+                        delay: 10000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.blog-slider__pagination',
+                        clickable: true,
+                    }
+                });
+            });
