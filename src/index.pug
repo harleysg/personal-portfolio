@@ -7,6 +7,7 @@ html(lang="en")
         -var menu = [ {"link": '#about', "text": 'nosotros'}, {"link": '#works', "text": 'trabajos'}, {"link": '#enfoque', "text": 'enfoque'}, {"link": '#contact', "text": 'contacto'}]
         include ./views/shared/_head
     body
+        include ./views/shared/_gtm_noscript
         main(id="app" class="o-main"+' '+mainClass)
             include ./views/shared/_header
             |
