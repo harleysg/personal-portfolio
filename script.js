@@ -429,3 +429,4 @@ function setIntersectionTo(DOMElmString, thold = 0, callback = () => {}) {
     });
   }
 }
+//# sourceMappingURL=script.js.map
