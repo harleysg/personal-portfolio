@@ -7,7 +7,31 @@ export default function handler(req, res) {
     { link: '#contact', text: 'contacto' }
   ];
 
+  const sections = {
+    one: {
+      indicator: 'Somos, un estudio de diseño Colombiano.',
+      enfasis: 'Creamos',
+      content: 'Productos digitales y marcas del futuro'
+    },
+    two: {
+      indicator: 'indicador',
+      enfasis: 'enfasis',
+      content: 'contenido'
+    },
+    three: {
+      indicator: 'indicador',
+      enfasis: 'enfasis',
+    },
+  };
+
+  const meta = {
+    title: '',
+    description: ''
+  }
+
   res.status(200).json({
-    menu
+    sections,
+    menu,
+    meta,
   });
 }
