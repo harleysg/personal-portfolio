@@ -1,8 +1,22 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
 
 import Header from 'components/layout/header';
+import Headding from 'components/layout/headding';
+import Chevron from 'components/chevron';
+import useMouse from 'hooks/useMouse';
 
-export default function Home() {
+export default function Home({ data = {} }) {
+
+  const { eventMousePosition } = useMouse();
+
+  useEffect(() => {
+    eventMousePosition('start')
+    return () => {
+      eventMousePosition('end')
+    }
+  }, [eventMousePosition])
+
   return (
     <>
       <Head>
@@ -11,11 +25,40 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Header />
+      <Header menu={data?.menu} />
+
       <main className={'o-main'}>
-        <section className={'o-section'}>lorem</section>
+        <section className={'o-section'}>
+          <div className={'o-wrapper'}>
+            <Headding text={data?.sections?.one} />
+          </div>
+          <Chevron />
+        </section>
+        <section className={'o-section'} data-theme='gold'>
+          <div className={'o-wrapper'}>
+            <Headding text={data?.sections?.one} />
+          </div>
+        </section>
+        <section className={'o-section'} data-theme='gray'>
+          <div className={'o-wrapper'}>
+            <Headding text={data?.sections?.one} />
+          </div>
+        </section>
+        <section className={'o-section'} data-theme='dark'>
+          <div className={'o-wrapper'}>
+            <Headding text={data?.sections?.one} />
+          </div>
+        </section>
       </main>
+
       <div className={'mouse-tracker'}></div>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await fetch(`http://localhost:3000/api/hello`);
+  const data = await res.json();
+
+  return { props: { data } };
 }
