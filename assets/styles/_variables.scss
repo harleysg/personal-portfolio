@@ -6,18 +6,26 @@
     --theme-contrast: #323232;
     --color-w: #ffffff;
     --color-b: #141414;
-    --color-0: #f5f5f5;
-    --color-1: #323232;
+    --color-0: #dddddd;
+    --color-1: #303030;
     --color-a: #eec32e; //#bc5ff1;
     --color-c: #fe8a39; //#3a1a7b;
+
+    --layout-max-size: 1200px;
+    --layout-header-size-height: 4rem;
+    --layout-headding-indicator-height: 0.2rem;
+    --layout-logo-size-height: 3rem;
+    --layout-btn-padding: 0.2rem 0.5rem;
 
     --theme-header-bg: rgba(255, 255, 255, 0.4);
     --theme-menu-link-color: var(--color-a);
 
     --theme-section-bg: var(--color-w);
     --theme-headding-enfasis: var(--color-a);
+    --theme-headding-enfasis-shadow: var(--color-1);
     --theme-headding-separador: var(--color-a);
     --theme-headding-indicator: var(--color-b);
+    --theme-headding-color: var(--color-1);
 
     --theme-card-content-bg: var(--color-w);
     --theme-card-before-border-bg: var(--color-1);

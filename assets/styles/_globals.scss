@@ -11,27 +11,28 @@
   }
   &wrapper {
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--layout-max-size);
     margin: 0 auto;
     position: relative;
-    z-index: 1;
   }
   &footer {
     padding: 5vw 0 1vh;
     width: 100%;
-    min-height: 300px;
+    min-height: 50vh;
   }
   &section {
     width: 100%;
-    min-height: 100vh;
+    min-height: 85vh;
     position: relative;
     background-color: var(--theme-section-bg);
     transition: transform 0.3s ease-in-out;
+
     &:first-of-type {
-        padding-top: 7rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        height: 100%;
+        max-height: calc(100vh - var(--layout-header-size-height));
     }
     &.u-extra {
         height: 130vh;
