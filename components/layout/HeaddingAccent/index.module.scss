@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+.c- {
+    &mega_headding {
+        font-size: 450px;
+        font-family: var(--font-medium);
+        color: var(--theme-mega-headding-color);
+        text-shadow: -25px 25px 40px rgba(var(--theme-mega-headding-shadow), 0.1);
+        position: relative;
+        left: 6vmin;
+        &-wrapper {
+            position: absolute;
+            z-index: 0;
+            top: auto;
+            bottom: 10px;
+            overflow: hidden;
+            width: 100%;
+            user-select: none;
+            pointer-events: none;
+        }
+    }
+}
