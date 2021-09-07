@@ -1,21 +1,11 @@
 import Head from 'next/head';
-import { useEffect } from 'react';
 
 import Header from 'components/layout/header';
 import Headding from 'components/layout/headding';
 import Chevron from 'components/chevron';
-import useMouse from 'hooks/useMouse';
+import MegaHeadding from 'components/layout/HeaddingAccent';
 
 export default function Home({ data = {} }) {
-
-  const { eventMousePosition } = useMouse();
-
-  useEffect(() => {
-    eventMousePosition('start')
-    return () => {
-      eventMousePosition('end')
-    }
-  }, [eventMousePosition])
 
   return (
     <>
@@ -25,13 +15,14 @@ export default function Home({ data = {} }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Header menu={data?.menu} />
+      <Header menu={data?.menu}/>
 
       <main className={'o-main'}>
-        <section className={'o-section'}>
+        <section className={'o-section'} data-theme='gray'>
           <div className={'o-wrapper'}>
             <Headding text={data?.sections?.one} />
           </div>
+          <MegaHeadding text='CubioStudio' />
           <Chevron />
         </section>
         <section className={'o-section'} data-theme='gold'>
@@ -39,7 +30,12 @@ export default function Home({ data = {} }) {
             <Headding text={data?.sections?.one} />
           </div>
         </section>
-        <section className={'o-section'} data-theme='gray'>
+        <section className={'o-section'}>
+          <div className={'o-wrapper'}>
+            <Headding text={data?.sections?.one} />
+          </div>
+        </section>
+        <section className={'o-section'} data-theme='dark'>
           <div className={'o-wrapper'}>
             <Headding text={data?.sections?.one} />
           </div>

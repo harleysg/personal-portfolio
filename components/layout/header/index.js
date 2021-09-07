@@ -1,5 +1,5 @@
 import types from "prop-types"
-import style from './_index.module.scss';
+import style from './_index.module.scss'
 
 const IMenu = [{ link: '', text: '', id: '' }]
 
