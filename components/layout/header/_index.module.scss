@@ -1,83 +1,95 @@
 @charset "utf-8";
 .o- {
-    &header {
-        display: flex;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        width: 100%;
-        min-height: var(--layout-header-size-height);
-        padding: 0rem 3vw;
-        background-color: var(--theme-header-bg);
+  &header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    min-height: var(--layout-header-size-height);
+    padding: 0rem 3vw;
+    background-color: var(--theme-header-bg);
 
-        &_wrapper {
-            max-width: var(--layout-max-size);
-            width: 100%;
-            height: 100%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        &[data-over='on-gold'] {
-            .o-menu_options-link {
-                color: var(--color-1);
-            }
-        }
-        &[data-over='on-dark'] {
-            .o-menu_options-link {
-                color: var(--color-w);
-            }
-        }
-    }
-    &logo {
-        max-width: var(--layout-logo-size-height);
-        width: 100%;
-    }
-    &menu {
-        width: 100%;
-        max-width: 500px;
-        &_btn {
-            max-width: 2rem;
-            width: 100%;
-            display: none;
-        }
-        &_options {
-            display: flex;
-            justify-content: space-around;
-            margin: 0;
-            padding: 0;
-            &-item {
-                list-style-type: none;
-                font-family: var(--font-medium);
-                display: inline-flex;
-                overflow: hidden;
-                text-transform: uppercase;
-            }
-            &-link {
-                --line-hover-height: 3px;
 
-                position: relative;
-                text-decoration: none;
-                color: var(--theme-menu-link-color);
-                transition: color 0.5s;
-                
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: calc(65% - var(--line-hover-height));
-                    left: -100%;
-                    width: 100%;
-                    height: var(--line-hover-height);
-                    background-color: var(--color-a);
-                    transition: left 0.5s cubic-bezier(0.37, 0.01, 0, 0.98);
-                }
-                &:hover {
-                    &::after {
-                        left: -13%;
-                    }
-                }
-            }
-        }
+    &_wrapper {
+      max-width: var(--layout-max-size);
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    &[data-over='on-gold'] {
+      .o-menu_options-link {
+        color: var(--color-1);
+      }
+    }
+
+    &[data-over='on-dark'] {
+      .o-menu_options-link {
+        color: var(--color-w);
+      }
+    }
+  }
+
+  &logo {
+    max-width: var(--layout-logo-size-height);
+    width: 100%;
+  }
+
+  &menu {
+    width: 100%;
+    max-width: 500px;
+
+    &_btn {
+      max-width: 2rem;
+      width: 100%;
+      display: none;
+    }
+
+    &_options {
+      display: flex;
+      justify-content: space-around;
+      margin: 0;
+      padding: 0;
+
+      &-item {
+        list-style-type: none;
+        font-family: var(--font-medium);
+        display: inline-flex;
+        overflow: hidden;
+      }
+
+      &-link {
+        --line-hover-height: 3px;
+
+        position: relative;
+
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 75%;
+        color: var(--theme-menu-link-color);
+        transition: color 0.5s;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: calc(65% - var(--line-hover-height));
+          left: -100%;
+          width: 100%;
+          height: var(--line-hover-height);
+          background-color: var(--color-a);
+          transition: left 0.5s cubic-bezier(0.37, 0.01, 0, 0.98);
+        }
+
+        &:hover {
+          &::after {
+            left: -13%;
+          }
+        }
+      }
+    }
+  }
 }
