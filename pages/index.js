@@ -1,3 +1,5 @@
+import apiData from "../pages/api/hello";
+
 import Head from 'next/head';
 
 import Header from 'components/layout/header';
@@ -53,8 +55,7 @@ export default function Home({ data = {} }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:3000/api/hello`);
-  const data = await res.json();
+  const data = apiData();
 
   return { props: { data } };
 }
