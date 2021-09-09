@@ -2,12 +2,15 @@
 
 .c- {
     &mega_headding {
-        font-size: 450px;
+        font-size: clamp(20em, 60vmin, 30em);
         font-family: var(--font-medium);
         color: var(--theme-mega-headding-color);
         text-shadow: -25px 25px 40px rgba(var(--theme-mega-headding-shadow), 0.1);
         position: relative;
         left: 6vmin;
+        user-select: none;
+        pointer-events: none;
+
         &-wrapper {
             position: absolute;
             z-index: 0;
@@ -15,8 +18,7 @@
             bottom: 10px;
             overflow: hidden;
             width: 100%;
-            user-select: none;
-            pointer-events: none;
+            mix-blend-mode: overlay;
         }
     }
 }

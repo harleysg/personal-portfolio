@@ -13,11 +13,14 @@
 
   --layout-max-size: 1200px;
   --layout-header-size-height: 4rem;
+  --layout-header-blur: 2px;
+  --layout-header-blur-hover: 4px;
   --layout-headding-indicator-height: 0.2rem;
   --layout-logo-size-height: 3rem;
   --layout-btn-padding: 0.2rem 0.5rem;
+  --layout-section-min-height: 95vh;
 
-  --theme-header-bg: rgba(255, 255, 255, 0.4);
+  --theme-header-bg: hsl(0deg, 0%, 0%, 2%);
   --theme-menu-link-color: var(--color-a);
 
   --theme-section-bg: var(--color-w);

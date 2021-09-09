@@ -2,14 +2,19 @@
 .o- {
   &header {
     display: flex;
-    position: sticky;
+    align-items: center;
+    position: fixed;
     top: 0;
     z-index: 10;
     width: 100%;
     min-height: var(--layout-header-size-height);
     padding: 0rem 3vw;
     background-color: var(--theme-header-bg);
+    backdrop-filter: blur(var(--layout-header-blur));
 
+    &:hover {
+      backdrop-filter: blur(var(--layout-header-blur-hover));
+    }
 
     &_wrapper {
       max-width: var(--layout-max-size);
@@ -19,6 +24,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
     &[data-over='on-gold'] {
@@ -41,7 +48,7 @@
 
   &menu {
     width: 100%;
-    max-width: 500px;
+    max-width: max-content;
 
     &_btn {
       max-width: 2rem;
@@ -52,6 +59,7 @@
     &_options {
       display: flex;
       justify-content: space-around;
+      gap: clamp(0.6rem, 3vmin, 1rem);
       margin: 0;
       padding: 0;
 

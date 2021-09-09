@@ -5,6 +5,8 @@
   &main {
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-rows: 100vh auto;
   }
   &article {
     padding: 2vh 4vw;
@@ -23,17 +25,17 @@
   }
   &section {
     width: 100%;
-    min-height: 85vh;
+    min-height: var(--layout-section-min-height);
     position: relative;
     background-color: var(--theme-section-bg);
     transition: transform 0.3s ease-in-out;
+    padding-top: calc(var(--layout-header-size-height) * 1.5);
 
     &:first-of-type {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-        max-height: calc(100vh - var(--layout-header-size-height));
     }
     &.u-extra {
         height: 130vh;
