@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+.c-section_headding {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    margin-bottom: 5vh;
+    padding-top: 5vh;
+    cursor: default;
+    font-size: 1rem;
+    line-height: 1.1;
+    color: var(--theme-headding-color);
+
+    &-indicator {
+        position: relative;
+        font-family: var(--font-medium);
+        color: var(--theme-headding-indicator);
+        font-size: clamp(0.7em, 8vmin, 1.1em);
+
+        &::after {
+            content: '';
+            width: 100%;
+            min-height: var(--layout-headding-indicator-height);
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 0;
+            background-color: var(--theme-headding-separador);
+        }
+    }
+    // TODO: create component
+    &-enfasis {
+        color: var(--theme-headding-enfasis);
+        text-shadow: 1px 1px var(--theme-headding-enfasis-shadow);
+    }
+    &-content {
+        width: 100%;
+        margin-top: .9rem;
+        font-family: var(--font-medium);
+        font-size: clamp(3em, 11vmin, 5em);
+    }
+}

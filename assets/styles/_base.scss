@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+html {
+  font-family: var(--font-normal), -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  font-size: 18px;
+  height: 100%;
+  width: 100%;
+  color: var(--color-b);
+}
+body {
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  grid-auto-rows: max-content;
+
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  background-color: var(--color-0);
+  cursor: initial;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-bold);
+}
+
+img {
+  max-width: 100%;
+}
+
+strong,
+b {
+  font-family: var(--font-bold);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  --layout-btn-padding: 0.2rem 0.3rem;
+
+  all: unset;
+  cursor: pointer;
+  padding: var(--layout-btn-padding);
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+}
