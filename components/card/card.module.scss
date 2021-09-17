@@ -1,0 +1,79 @@
+@mixin bgGradient($color1, $color2, $size) {
+  background: linear-gradient(to right, $color1 0, $color1) top no-repeat,
+    linear-gradient(to left, $color2 0%, $color2) bottom no-repeat,
+    linear-gradient(to bottom, $color1 0, $color1 33.3%, $color2 77%, $color2)
+      left no-repeat,
+    linear-gradient(to bottom, $color1 0, $color1 33.3%, $color2 77%, $color2)
+      right no-repeat;
+  background-size: 100% $size, 100% $size, $size 100%, $size 100%;
+}
+
+.c-card {
+  margin: 0;
+
+  &_wrapper {
+    padding: 10px;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 90%;
+      height: 90%;
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      z-index: 0;
+      @include bgGradient(
+        var(--theme-card-before-border-bg),
+        var(--theme-card-before-border-bg),
+        4px
+      );
+    }
+  }
+
+  &_image {
+    width: 100%;
+    height: 100%;
+    max-width: 270px;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    z-index: 0;
+  }
+
+  &_content {
+    display: flex;
+    position: relative;
+    z-index: 0;
+    box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.27);
+
+    @media screen and (max-width: 27em) {
+      flex-direction: column;
+    }
+  }
+
+
+  &_caption {
+    background-color: var(--theme-card-content-bg);
+    padding: 10px;
+    width: 100%;
+  }
+
+  &_title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--color-a);
+    font-size: 1.2em;
+  }
+
+  &_description {
+    font-family: var(--font-normal);
+    font-size: 26px;
+  }
+
+  &_link {
+    &-email {
+      color: var(--color-a);
+    }
+  }
+}

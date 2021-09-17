@@ -4,6 +4,7 @@
     "paths": {
       "@/styles/*": ["assets/styles/*"],
       "@/images/*": ["assets/images/*"],
+      "@/interface/*": ["shared/interface/*"],
     }
   }
 }
