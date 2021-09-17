@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import css from './card.module.scss';
+import { ICard } from "@/interface/index";
 
-export default function Card({ name, title, description, mail }) {
+export default function Card({ name, title, description, mail, image } = ICard) {
   return (
     <figure className={css['c-card']}>
       <div className={css['c-card_wrapper']}>
@@ -18,14 +19,15 @@ export default function Card({ name, title, description, mail }) {
               </small>
             </div>
           </figcaption>
-
-          <Image
+          {
+            image && <Image
             className={css['c-card_image']}
-            width={400}
-            height={400}
-            src='https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg'
+            width={image.width}
+            height={image.height}
+            src={image.url}
             alt={name}
           />
+          }
         </div>
       </div>
     </figure>
