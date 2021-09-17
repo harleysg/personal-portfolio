@@ -29,9 +29,9 @@ export default function handler(req, res) {
     description: ''
   }
 
-  res.status(200).json({
+  return {
     sections,
     menu,
     meta,
-  });
+  }
 }
