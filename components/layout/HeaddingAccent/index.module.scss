@@ -2,7 +2,7 @@
 
 .c- {
     &mega_headding {
-        font-size: clamp(20em, 60vmin, 30em);
+        font-size: clamp(20em, 60vmin, 25em);
         font-family: var(--font-medium);
         color: var(--theme-mega-headding-color);
         text-shadow: -25px 25px 40px rgba(var(--theme-mega-headding-shadow), 0.1);
@@ -15,7 +15,7 @@
             position: absolute;
             z-index: 0;
             top: auto;
-            bottom: 10px;
+            bottom: -30px;
             overflow: hidden;
             width: 100%;
             mix-blend-mode: overlay;

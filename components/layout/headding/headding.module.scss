@@ -3,6 +3,9 @@
 .c-section_headding {
     position: relative;
     z-index: 1;
+    max-width: calc(var(--layout-max-size) - 10vw);
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 0;
     margin-bottom: 5vh;
     padding-top: 5vh;
