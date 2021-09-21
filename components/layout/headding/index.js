@@ -1,29 +1,26 @@
-import style from './headding.module.scss';
-import types from "prop-types"
+import style from './headding.module.scss'
+import types from 'prop-types'
+import { IHeading } from "@/interface/index";
 
 const Itext = {
-  indicator: '',
-  enfasis: '',
-  content: ''
+  ...IHeading
 }
 
-export default function Headding({ text = Itext }) {
+export default function Headding({ main = false, text = Itext }) {
+  const { indicator, enfasis, content, space } = text
+  const TagName = (props) => main ? <h1 {...props}>{ props.children }</h1> : <h2 {...props}>{ props.children }</h2>
+
   return (
-    <h1 className={style['c-section_headding']}>
-      <small className={style['c-section_headding-indicator']}>
-        {text?.indicator}
-      </small>
-      {(text?.enfasis || text?.content) && (
+    <TagName className={style['c-section_headding']}>
+      {indicator && <HeaddingIndicator text={indicator} />}
+      {(enfasis || content) && (
         <div className={style['c-section_headding-content']}>
-          {text?.enfasis && (
-            <span className={style['c-section_headding-enfasis']}>
-              {text.enfasis}
-            </span>
-          )}
-          {text?.content && <> {text?.content}</>}
+          {enfasis && <HeaddingEnfasis text={enfasis} />}
+          {space && <> </>}
+          {content && <>{content}</>}
         </div>
       )}
-    </h1>
+    </TagName>
   );
 }
 
@@ -33,4 +30,14 @@ Headding.propTypes = {
     [Itext.enfasis]: types.string,
     [Itext.content]: types.string
   })
+};
+
+function HeaddingIndicator({ text }) {
+  return (
+    <small className={style['c-section_headding-indicator']}>{text}</small>
+  );
+}
+
+function HeaddingEnfasis({ text }) {
+  return <span className={style['c-section_headding-enfasis']}>{text}</span>;
 }
