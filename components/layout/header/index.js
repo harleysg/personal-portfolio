@@ -6,7 +6,7 @@ const IMenu = [{ link: '', text: '', id: '' }]
 export default function Header({ menu = IMenu }) {
   return (
     <header className={style['o-header']}>
-      <div className={style['o-header_wrapper']}>
+      <div className={`o-wrapper ${style['o-header_wrapper']}`}>
         <span className={`${style['o-logo']}`}>
           <LogoSvg />
         </span>
