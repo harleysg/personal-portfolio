@@ -2,6 +2,7 @@
   --size-init: 0.6rem;
   --size-active: 1.5rem;
 
+  display: var(--mouse-visible);
   position: fixed;
   z-index: 999;
   top: 0;
