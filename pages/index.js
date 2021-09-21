@@ -5,7 +5,7 @@ import apiData from "./api/hello";
 import { IMenu, IMeta, ISection } from '@/interface/index'
 
 import Header from 'components/layout/header';
-import Section from 'components/layout/Section';
+import Section from 'components/layout/section';
 import Headding from 'components/layout/headding';
 import Chevron from 'components/chevron';
 import MegaHeadding from 'components/layout/headdingAccent';
