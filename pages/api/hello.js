@@ -2,31 +2,47 @@
 
 export default function handler(req, res) {
   const menu = [
-    { link: '#about', text: 'About' },
-    { link: '#works', text: 'works' },
-    { link: '#contact', text: 'contacto' }
+    { link: '#', text: 'welcome' },
+    { link: '#typography', text: 'typography' },
+    { link: '#form', text: 'forms' }
   ];
 
+const author = {
+  id:'01',
+  name: 'Harley Santos Garzon',
+  title: 'Frontend Developer',
+  description: 'Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón.',
+  mail: 'harley.santos.garzon@mail.com'
+}
+
   const sections = {
-    one: {
-      indicator: 'Somos, un estudio de diseño Colombiano.',
-      enfasis: 'Creamos',
-      content: 'Productos digitales y marcas del futuro'
+    welcome: {
+      indicator: 'Personal portofio',
+      content: 'Harley',
+      enfasis: 'Santos Garzón',
+      megaHeadding: 'Portfolio',
+      space: true
     },
-    two: {
-      indicator: 'indicador',
-      enfasis: 'enfasis',
-      content: 'contenido'
+    guide_typo: {
+      indicator: 'Guide lines',
+      enfasis: 'Typo',
+      content: 'graphy',
+      space: false
     },
-    three: {
-      indicator: 'indicador',
-      enfasis: 'enfasis',
+    guide_card: {
+      indicator: 'Guide lines',
+      enfasis: 'Form',
+      content: 'components',
+      space: true,
+      data: {
+        cards: [author]
+      }
     },
   };
 
   const meta = {
-    title: '',
-    description: ''
+    title: 'harleysg portfolio',
+    description: 'Personal portfolio by harley Santos Garzón'
   }
 
   return {
