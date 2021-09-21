@@ -46,6 +46,7 @@ html {
   }
   &[data-theme='dark'] {
     --theme-section-bg: var(--color-1);
+    --theme-body-color: var(--color-w);
     --theme-headding-enfasis: var(--color-a);
     --theme-headding-enfasis-shadow: var(--color-b);
     --theme-headding-separador: var(--color-a);
@@ -54,6 +55,9 @@ html {
     --theme-header-bg: rgba(0, 0, 0, 0.2);
     --theme-svg-logo-fill: var(--color-w);
     --theme-menu-link-color: var(--color-w);
+
+    color: var(--theme-body-color);
+
   }
 }
 .o-section {

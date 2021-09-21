@@ -10,31 +10,37 @@
   --color-1: #303030;
   --color-a: #eec32e; //#bc5ff1;
   --color-c: #fe8a39; //#3a1a7b;
+  --color-d: #c2c2c2;
 
-  --layout-max-size: 1400px;
-  --layout-header-size-height: 4rem;
+  --layout-max-size: 140em;
+  --layout-header-size-height: 6rem;
   --layout-header-blur: 2px;
   --layout-header-blur-hover: 4px;
   --layout-headding-indicator-height: 0.2rem;
-  --layout-logo-size-height: 3rem;
+  --layout-logo-size-height: 4rem;
   --layout-btn-padding: 0.2rem 0.5rem;
   --layout-section-min-height: 95vh;
 
-  --theme-header-bg: hsl(0deg, 0%, 0%, 2%);
-  --theme-menu-link-color: var(--color-a);
+  --theme-body-color: var(--color-b);
 
-  --theme-section-bg: var(--color-w);
+  --theme-header-bg: hsl(0deg, 0%, 0%, 2%);
+  
   --theme-headding-enfasis: var(--color-a);
   --theme-headding-enfasis-shadow: var(--color-1);
   --theme-headding-separador: var(--color-a);
   --theme-headding-indicator: var(--color-b);
   --theme-headding-color: var(--color-1);
 
+  --theme-form-accent-color: var(--color-a);
+  
+  --theme-section-bg: var(--color-w);
+  
   --theme-card-content-bg: var(--color-w);
   --theme-card-before-border-bg: var(--color-1);
-
+  
   --theme-svg-logo-fill: var(--color-1);
-
+  
+  --theme-menu-link-color: var(--color-b);
   --theme-mega-headding-color: var(--color-w);
   --theme-mega-headding-shadow: 0, 0, 0;
 
