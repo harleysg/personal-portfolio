@@ -1,48 +1,53 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect } from 'react';
+
+function setPosition(position) {
+  document.documentElement.style.setProperty('--mouse-x', `${position.x}px`);
+  document.documentElement.style.setProperty('--mouse-y', `${position.y}px`);
+}
+
+function showMouse() {
+  document.documentElement.style.setProperty('--mouse-visible', 'block');
+}
+
+function handleMouseListener(event) {
+  getPosition(event, setPosition);
+}
+
+function eventMousePosition(action) {
+  if (action === 'start') {
+    document.addEventListener('mousemove', handleMouseListener);
+    document.addEventListener('touchmove', handleMouseListener);
+
+    return true;
+  }
+  if (action === 'end') {
+    document.removeEventListener('mousemove', handleMouseListener);
+    document.removeEventListener('touchmove', handleMouseListener);
+
+    return false;
+  }
+}
+
+function getPosition(event, cb) {
+  const type = event.type;
+  switch (type) {
+    case 'touchmove':
+      cb({
+        x: event.changedTouches[0].clientX,
+        y: event.changedTouches[0].clientY
+      });
+      break;
+    case 'mousemove':
+      cb({ x: event.clientX, y: event.clientY });
+  }
+}
 
 export default function useMouse() {
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
-
-  const getPosition = useCallback(
-    function (event) {
-      const type = event.type;
-      switch (type) {
-        case 'touchmove':
-          setX(event.changedTouches[0].clientX);
-          setY(event.changedTouches[0].clientY);
-          break;
-        case 'mousemove':
-          setX(event.clientX);
-          setY(event.clientY);
-      }
-    },
-    [setX, setY]
-  );
-
-  const eventMousePosition = useCallback(
-    function (action) {
-      if (action === 'start') {
-        document.addEventListener('mousemove', getPosition);
-        document.addEventListener('touchmove', getPosition);
-      }
-      if (action === 'end') {
-        document.removeEventListener('mousemove', getPosition);
-        document.removeEventListener('touchmove', getPosition);
-      }
-    },
-    [getPosition]
-  );
-
   useEffect(() => {
-    document.documentElement.style.setProperty('--mouse-x', x + 'px');
-    document.documentElement.style.setProperty('--mouse-y', y + 'px');
-  }, [x, y]);
+    eventMousePosition('start') && showMouse();
 
-  useEffect(() => {
-    eventMousePosition('start')
     return () => {
-      eventMousePosition('end')
-    }
-  }, [eventMousePosition])
+      eventMousePosition('end');
+    };
+  }, []);
 }

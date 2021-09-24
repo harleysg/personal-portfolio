@@ -7,18 +7,22 @@
         color: var(--theme-mega-headding-color);
         text-shadow: -25px 25px 40px rgba(var(--theme-mega-headding-shadow), 0.1);
         position: relative;
-        left: 6vmin;
         user-select: none;
         pointer-events: none;
-
+        
         &-wrapper {
             position: absolute;
             z-index: 0;
             top: auto;
-            bottom: 10px;
+            bottom: -30px;
+            padding-left: 7vmin;
             overflow: hidden;
             width: 100%;
             mix-blend-mode: overlay;
+        }
+
+        @media screen and (min-width: 40em) {
+            font-size: clamp(20em, 60vmin, 44em);
         }
     }
 }
