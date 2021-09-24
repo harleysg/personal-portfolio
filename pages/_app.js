@@ -6,10 +6,12 @@ import '@/styles/_globals.scss'
 import '@/styles/_specificity.scss'
 
 import useMouse from 'hooks/useMouse'
+import useThemeSetector from 'hooks/useThemeSetector'
 
 function MyApp({ Component, pageProps }) {
 
   useMouse();
+  useThemeSetector();
 
   return <Component {...pageProps} />
 }

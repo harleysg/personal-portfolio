@@ -137,7 +137,7 @@ export default function Home({ data = IData }) {
             <Headding text={data?.sections?.guide_form} />
           </div>
         </Section>
-        <Section>
+        <Section  theme='light'>
           <div className={'o-wrapper'}>
             <Headding text={data?.sections?.guide_gallery} />
           </div>
