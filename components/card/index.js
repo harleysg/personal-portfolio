@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import css from './card.module.scss';
-import { ICard } from "@/interface/index";
+import Image from 'next/image'
+import css from './card.module.scss'
+import { ICard } from '@/interface/index'
 
-export default function Card({ name, title, description, mail, image } = ICard) {
+export default function Card ({ name, title, description, mail, image } = ICard) {
   return (
     <figure className={css['c-card']}>
       <div className={css['c-card_wrapper']}>
@@ -20,16 +20,18 @@ export default function Card({ name, title, description, mail, image } = ICard) 
             </div>
           </figcaption>
           {
-            image && <Image
-            className={css['c-card_image']}
-            width={image.width}
-            height={image.height}
-            src={image.url}
-            alt={name}
-          />
+            image && (
+              <Image
+                className={css['c-card_image']}
+                width={image.width}
+                height={image.height}
+                src={image.url}
+                alt={name}
+              />
+            )
           }
         </div>
       </div>
     </figure>
-  );
+  )
 }

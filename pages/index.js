@@ -1,16 +1,16 @@
-import Head from 'next/head';
+import Head from 'next/head'
 
-import apiData from "./api/hello";
+import apiData from './api/hello'
 
 import { IMenu, IMeta, ISection } from '@/interface/index'
 
-import Header from 'components/layout/header';
-import Section from 'components/layout/section';
-import Headding from 'components/layout/headding';
-import Chevron from 'components/chevron';
-import MegaHeadding from 'components/layout/headdingAccent';
-import Linkedin from "components/seo/linkedin";
-import Compare from 'components/layout/comparing';
+import Header from 'components/layout/header'
+import Section from 'components/layout/section'
+import Headding from 'components/layout/headding'
+import Chevron from 'components/chevron'
+import MegaHeadding from 'components/layout/headdingAccent'
+import Linkedin from 'components/seo/linkedin'
+import Compare from 'components/layout/comparing'
 
 const IData = {
   meta: IMeta,
@@ -20,32 +20,31 @@ const IData = {
     guide_typo: ISection,
     guide_card: ISection,
     guide_gallery: ISection,
-    guide_form: ISection,
+    guide_form: ISection
   }
 }
 
-export default function Home({ data = IData }) {
-
+export default function Home ({ data = IData }) {
   return (
     <>
       <Head>
-        <title>{ data?.meta?.title }</title>
-        <meta name='description' content={ data?.meta?.descriptions } />
+        <title>{data?.meta?.title}</title>
+        <meta name='description' content={data?.meta?.descriptions} />
         <link rel='icon' href='/favicon.ico' />
         <Linkedin />
       </Head>
 
-      <Header menu={data?.menu}/>
+      <Header menu={data?.menu} />
 
-      <main className={'o-main'}>
+      <main className='o-main'>
         <Section theme='gray'>
           {
-            data?.sections?.welcome?.megaHeadding && <MegaHeadding text={ data?.sections?.welcome?.megaHeadding } />
+            data?.sections?.welcome?.megaHeadding && <MegaHeadding text={data?.sections?.welcome?.megaHeadding} />
           }
-          <div className={'o-wrapper'}>
-            <div className="c-welcome_message">
+          <div className='o-wrapper'>
+            <div className='c-welcome_message'>
               <Headding text={data?.sections?.welcome} />
-              <div className="c-welcome_details">
+              <div className='c-welcome_details'>
                 <div><strong>Industria: </strong><span>Graphic Design</span></div>
                 <div><strong>Año: </strong><span>2020</span></div>
               </div>
@@ -54,10 +53,10 @@ export default function Home({ data = IData }) {
           <Chevron />
         </Section>
         <Section id='typography' theme='gold'>
-          <div className={'o-wrapper'}>
-          <Headding text={data?.sections?.guide_typo} />
+          <div className='o-wrapper'>
+            <Headding text={data?.sections?.guide_typo} />
             <Compare
-              left= { 
+              left={
                 <>
                   <h1>Headding 1</h1>
                   <h2>Headding 2</h2>
@@ -69,9 +68,9 @@ export default function Home({ data = IData }) {
                 </>
               }
               right={
-                <div className="c-welcome_message">
+                <div className='c-welcome_message'>
                   <h3 className='c-welcome_enfasis'>Diseño, construcción de marca y pieza promocionales.</h3>
-                  <div className="c-welcome_details">
+                  <div className='c-welcome_details'>
                     <div><strong>Industria: </strong><span>Salud</span></div>
                     <div><strong>Año: </strong><span>2018</span></div>
                   </div>
@@ -81,9 +80,9 @@ export default function Home({ data = IData }) {
           </div>
         </Section>
         <Section id='form' theme='dark'>
-          <div className={'o-wrapper'}>
+          <div className='o-wrapper'>
             <Compare
-              left={ <Headding text={data?.sections?.guide_card} /> }
+              left={<Headding text={data?.sections?.guide_card} />}
               right={
                 <form className='c-headding_align' onSubmit={e => e.preventDefault()}>
                   <div className='c-form_wrapper'>
@@ -128,29 +127,29 @@ export default function Home({ data = IData }) {
                     </fieldset>
                   </div>
                 </form>
-              }>
-            </Compare>
+              }
+            />
           </div>
         </Section>
         <Section theme='dark'>
-          <div className={'o-wrapper'}>
+          <div className='o-wrapper'>
             <Headding text={data?.sections?.guide_form} />
           </div>
         </Section>
-        <Section  theme='light'>
-          <div className={'o-wrapper'}>
+        <Section theme='light'>
+          <div className='o-wrapper'>
             <Headding text={data?.sections?.guide_gallery} />
           </div>
         </Section>
       </main>
 
-      <div className={'mouse-tracker'}></div>
+      <div className='mouse-tracker' />
     </>
-  );
+  )
 }
 
-export async function getServerSideProps() {
-  const data = apiData();
+export async function getServerSideProps () {
+  const data = apiData()
 
-  return { props: { data } };
+  return { props: { data } }
 }

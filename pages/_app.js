@@ -10,10 +10,9 @@ import 'react-slidy/lib/index.scss'
 import useMouse from 'hooks/useMouse'
 import useThemeSetector from 'hooks/useThemeSetector'
 
-function MyApp({ Component, pageProps }) {
-
-  useMouse();
-  useThemeSetector();
+function MyApp ({ Component, pageProps }) {
+  useMouse()
+  useThemeSetector()
 
   return <Component {...pageProps} />
 }

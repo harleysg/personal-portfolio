@@ -1,19 +1,19 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default function handler(req, res) {
+export default function handler () {
   const menu = [
     { link: '#', text: 'welcome' },
     { link: '#typography', text: 'typography' },
     { link: '#form', text: 'forms' }
-  ];
+  ]
 
-const author = {
-  id:'01',
-  name: 'Harley Santos Garzon',
-  title: 'Frontend Developer',
-  description: 'Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón.',
-  mail: 'harley.santos.garzon@mail.com'
-}
+  const author = {
+    id: '01',
+    name: 'Harley Santos Garzon',
+    title: 'Frontend Developer',
+    description: 'Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón.',
+    mail: 'harley.santos.garzon@mail.com'
+  }
 
   const sections = {
     welcome: {
@@ -37,8 +37,8 @@ const author = {
       data: {
         cards: [author]
       }
-    },
-  };
+    }
+  }
 
   const meta = {
     title: 'harleysg portfolio',
@@ -48,6 +48,6 @@ const author = {
   return {
     sections,
     menu,
-    meta,
+    meta
   }
 }
