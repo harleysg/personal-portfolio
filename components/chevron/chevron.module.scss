@@ -30,7 +30,7 @@
           top: 0;
           height: 100%;
           width: 50%;
-          background: #2c3e50;
+          background: var(--chevron-color, var(--theme-body-color));
       }
 
       &:before {
