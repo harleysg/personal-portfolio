@@ -5,6 +5,8 @@ import '@/styles/_base.scss'
 import '@/styles/_globals.scss'
 import '@/styles/_specificity.scss'
 
+import 'react-slidy/lib/index.scss'
+
 import useMouse from 'hooks/useMouse'
 import useThemeSetector from 'hooks/useThemeSetector'
 
