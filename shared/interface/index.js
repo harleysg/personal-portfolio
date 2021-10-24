@@ -43,3 +43,5 @@ export const IData = {
     guide_form: ISection,
   }
 }
+
+export const IMediaQueryList = { media: '', label: '', match: false }
