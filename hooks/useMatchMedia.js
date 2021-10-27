@@ -2,11 +2,19 @@ import { useEffect, useState } from 'react'
 
 import { IMediaQueryList } from '@/interface/index'
 
-export default function useMatchMedia (mediaQueryList = IMediaQueryList) {
+export default function useMatchMedia (useMediaQuery = false, mediaQueryList = IMediaQueryList) {
   const [match, setMatch] = useState(mediaQueryList)
 
   useEffect(() => {
-    if (mediaQueryList.media) {
+    const splitMedia = mediaQueryList.media.split(' ')[1].split('px')[0]
+    const getMediaNumber = Number(splitMedia)
+    setMatch(
+      (state) => ({ ...state, match: window.innerWidth < getMediaNumber })
+    )
+  }, [mediaQueryList])
+
+  useEffect(() => {
+    if (useMediaQuery && mediaQueryList.media) {
       const matchMedia = window.matchMedia(mediaQueryList.media)
       const callback = ({ matches }) => setMatch(
         (state) => ({ ...state, match: matches })
@@ -16,7 +24,7 @@ export default function useMatchMedia (mediaQueryList = IMediaQueryList) {
 
       return () => matchMedia.removeEventListener('change', callback)
     }
-  }, [setMatch, mediaQueryList])
+  }, [setMatch, mediaQueryList, useMediaQuery])
 
   return match
 }
