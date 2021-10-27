@@ -18,7 +18,7 @@ export default function MegaHeadding ({ text }) {
       const megaHeadding = HeaddingRef.current
 
       setTimeout(() => {
-        megaHeadding || (megaHeadding.style.left = `-${scrollSize / 3}px`)
+        megaHeadding && (megaHeadding.style.left = `-${scrollSize / 3}px`)
       }, 90)
     }
 
