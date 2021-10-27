@@ -1,12 +1,14 @@
 @charset "utf-8";
 
 :root {
+  --color_0_hsl: 0, 0%, 94%;
+
   --duration: 1.6s;
   --easing: cubic-bezier(0.2, 0, 0.3, 1);
-  --theme-contrast: #323232;
+  --theme-contrast: #141414;
   --color-w: #ffffff;
-  --color-b: #141414;
-  --color-0: #efefef;
+  --color-b: var(--theme-contrast);
+  --color-0: hsl(var(--color_0_hsl));
   --color-1: #303030;
   --color-a: #eec32e; //#bc5ff1;
   --color-c: #fe8a39; //#3a1a7b;
@@ -34,6 +36,7 @@
   --theme-form-accent-color: var(--color-a);
   
   --theme-section-bg: var(--color-w);
+  --theme-section-bg-next: var(--color-w);
   
   --theme-card-content-bg: var(--color-w);
   --theme-card-before-border-bg: var(--color-1);

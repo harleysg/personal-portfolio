@@ -1,7 +1,6 @@
 import previewImage from '@/images/preview.png'
 
-
-export default function LinkedinMetaTag() {
+export default function LinkedinMetaTag () {
   return (
     <>
       <meta property='og:title' content='Personal portfolio' />
@@ -15,5 +14,5 @@ export default function LinkedinMetaTag() {
         content='https://github.com/harleysg/personal-portfolio'
       />
     </>
-  );
+  )
 }

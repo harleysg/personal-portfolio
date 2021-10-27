@@ -9,6 +9,7 @@
     width: 100%;
     min-height: var(--layout-header-size-height);
     background-color: var(--theme-header-bg);
+    color: var(--theme-body-color);
     backdrop-filter: blur(var(--layout-header-blur));
 
     &:hover {
@@ -26,18 +27,6 @@
       position: relative;
       z-index: 1;
     }
-
-    &[data-over='on-gold'] {
-      .o-menu_options-link {
-        color: var(--color-1);
-      }
-    }
-
-    &[data-over='on-dark'] {
-      .o-menu_options-link {
-        color: var(--color-w);
-      }
-    }
   }
 
   &logo {
@@ -47,7 +36,7 @@
     
     svg {
       width: 100%;
-      fill: currentColor;
+      fill: var(--theme-svg-logo-fill, currentColor);
     }
   }
 
@@ -84,7 +73,6 @@
         text-transform: uppercase;
         font-size: 75%;
         color: var(--theme-menu-link-color);
-        transition: color 0.5s;
         outline-offset: -2px;
         padding: 0.5em;
         outline-width: 1px;

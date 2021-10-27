@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 100vh auto;
+    grid-template-rows: min-content auto;
   }
   &article {
     padding: 2vh 4vw;
@@ -26,11 +26,28 @@
   &section {
     width: 100%;
     min-height: calc(var(--layout-section-min-height) + 10vh);
-    position: relative;
     background-color: var(--theme-section-bg);
     transition: transform 0.3s ease-in-out;
     padding: var(--layout-header-size-height) 0
-      calc(var(--layout-header-size-height) / 1.5);
+    calc(var(--layout-header-size-height) / 1.5);
+    
+    &[data-intermedian=true] {
+      --intermedian-variant-gap: 4;
+      min-height: auto;
+      margin-bottom: calc(var(--layout-header-size-height) * (var(--intermedian-variant-gap) * -1));
+      padding: 0;
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(
+        180deg,
+        var(--theme-section-bg) calc(100% - var(--layout-header-size-height) * var(--intermedian-variant-gap)),
+        var(--theme-section-bg-next) calc(100% - var(--layout-header-size-height) * var(--intermedian-variant-gap))
+      );
+
+      & + .o-section {
+        padding-top: calc(var(--layout-header-size-height) * 4);
+      }
+    }
 
     &:first-of-type {
       display: flex;
@@ -92,6 +109,11 @@
   &form {
     &_wrapper {
       padding: 2rem 0;
+    }
+  }
+  &video {
+    &_wrapper {
+      display: grid;
     }
   }
 }

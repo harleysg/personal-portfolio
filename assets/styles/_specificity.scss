@@ -10,61 +10,89 @@ body > #__next {
   grid-template-rows: inherit;
 }
 
-.o-section {
+html {
   &[data-theme='gold'] {
-    --theme-section-bg: var(--color-a);
+    --theme-header-bg: hsla(47, 90%, 56%, 0.5);
+    --theme-menu-link-color: var(--color-1);
   }
   &[data-theme='light'] {
-    --theme-section-bg: var(--color-w);
+    --theme-menu-link-color: var(--color-1);
   }
   &[data-theme='gray'] {
-    --theme-section-bg: var(--color-0);
+    --theme-menu-link-color: var(--color-1);
+    --theme-header-bg: hsla(var(--color_0_hsl), 0.4);
   }
   &[data-theme='dark'] {
-    --theme-section-bg: var(--color-1);
+    --theme-header-bg: rgba(0, 0, 0, 0.2);
+    --theme-menu-link-color: var(--color-w);
+    --theme-svg-logo-fill: var(--color-w);
   }
 }
-[data-theme='gold'] {
-  --theme-card-before-border-bg: var(--color-c);
-  --theme-header-bg: rgba(244, 200, 42, 0.5);
-  --theme-headding-enfasis: var(--color-w);
-  --theme-headding-enfasis-shadow: var(--color-1);
-  --theme-headding-separador: var(--color-w);
-  --theme-headding-color: var(--color-1);
-  --theme-mega-headding-color: #f4c82a;
-  --theme-mega-headding-shadow: 30, 30, 30;
-  --theme-menu-link-color: var(--color-1);
-}
-[data-theme='light'] {
-  --theme-headding-enfasis: var(--color-a);
-  --theme-headding-enfasis-shadow: var(--color-w);
-  --theme-headding-separador: var(--color-a);
-  --theme-mega-headding-color: var(--color-w);
-  --theme-mega-headding-shadow: 0, 0, 0;
-  --theme-card-content-bg: var(--color-w);
-  --theme-card-before-border-bg: var(--color-a);
-  --theme-headding-indicator: var(--color-1);
-  --theme-menu-link-color: var(--color-1);
-}
-[data-theme='gray'] {
-  --theme-headding-enfasis: var(--color-a);
-  --theme-headding-enfasis-shadow: var(--color-1);
-  --theme-headding-separador: var(--color-1);
-  --theme-card-content-bg: var(--color-a);
-  --theme-menu-link-color: var(--color-1);
-}
-[data-theme='dark'] {
-  --theme-body-color: var(--color-w);
-  --theme-headding-enfasis: var(--color-a);
-  --theme-headding-enfasis-shadow: var(--color-b);
-  --theme-headding-separador: var(--color-a);
-  --theme-headding-color: var(--color-w);
-  --theme-headding-indicator: var(--color-w);
-  --theme-header-bg: rgba(0, 0, 0, 0.2);
-  --theme-svg-logo-fill: var(--color-w);
-  --theme-menu-link-color: var(--color-w);
 
-  color: var(--theme-body-color);
+.o-section {
+
+  &[next-theme='gold'] {
+    --theme-section-bg-next: var(--color-a);
+  }
+
+  &[data-theme='gold'] {
+    --theme-card-before-border-bg: var(--color-c);
+    --theme-headding-enfasis: var(--color-w);
+    --theme-headding-enfasis-shadow: var(--color-1);
+    --theme-headding-separador: var(--color-w);
+    --theme-headding-color: var(--color-1);
+    --theme-mega-headding-color: #f4c82a;
+    --theme-mega-headding-shadow: 30, 30, 30;
+    --theme-section-bg: var(--color-a);
+    --theme-contrast: var(--color-b);
+  }
+
+  &[next-theme='light'] {
+    --theme-section-bg-next: var(--color-w);
+  }
+
+  &[data-theme='light'] {
+    --theme-headding-enfasis: var(--color-a);
+    --theme-headding-enfasis-shadow: var(--color-w);
+    --theme-headding-separador: var(--color-a);
+    --theme-mega-headding-color: var(--color-w);
+    --theme-mega-headding-shadow: 0, 0, 0;
+    --theme-card-content-bg: var(--color-w);
+    --theme-card-before-border-bg: var(--color-a);
+    --theme-headding-indicator: var(--color-1);
+    --theme-section-bg: var(--color-w);
+    --theme-contrast: var(--color-b);
+  }
+
+  &[next-theme='gray'] {
+    --theme-section-bg-next: var(--color-0);
+  }
+
+  &[data-theme='gray'] {
+    --theme-headding-enfasis: var(--color-a);
+    --theme-headding-enfasis-shadow: var(--color-1);
+    --theme-headding-separador: var(--color-1);
+    --theme-card-content-bg: var(--color-a);
+    --theme-section-bg: var(--color-0);
+    --theme-contrast: var(--color-b);
+  }
+
+  &[next-theme='dark'] {
+    --theme-section-bg-next: var(--color-1);
+  }
+
+  &[data-theme='dark'] {
+    --theme-body-color: var(--color-w);
+    --theme-headding-enfasis: var(--color-a);
+    --theme-headding-enfasis-shadow: var(--color-b);
+    --theme-headding-separador: var(--color-a);
+    --theme-headding-color: var(--color-w);
+    --theme-headding-indicator: var(--color-w);
+    --theme-section-bg: var(--color-1);
+    --theme-contrast: var(--color-a);
+  
+    color: var(--theme-body-color);
+  }
 }
 
 .o-section {
