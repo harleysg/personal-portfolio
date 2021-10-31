@@ -1,11 +1,15 @@
-import Head from 'next/head'
 
 import apiData from '../api/projects'
 
-import Compare from 'components/layout/comparing'
-import Header from 'components/layout/header'
+import Compare from '@/component/layout/comparing'
+import Header from '@/component/layout/header'
 import { IProjectPage } from '@/interface/index'
+import Headding from '@/component/layout/headding'
+import MegaHeadding from '@/component/layout/headdingAccent'
 import PageSEO from '@/component/seo'
+import Section from '@/component/layout/section'
+import Slider from '@/component/slider/customSlider'
+import Video from '@/component/video'
 
 export default function ProjectPage ({ serveData = IProjectPage }) {
   return (

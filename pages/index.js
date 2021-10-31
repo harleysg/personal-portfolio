@@ -1,11 +1,14 @@
-import Head from 'next/head'
 
 import apiData from './api/index'
 
-import Chevron from 'components/chevron'
-import Header from 'components/layout/header'
+import Chevron from '@/component/chevron'
+import Header from '@/component/layout/header'
 import { IHomePage } from '@/interface/index'
+import Headding from '@/component/layout/headding'
+import MegaHeadding from '@/component/layout/headdingAccent'
 import PageSEO from '@/component/seo'
+import Section from '@/component/layout/section'
+import Slider from '@/component/slider/customSlider'
 
 export default function Home ({ data = IHomePage }) {
   return (
@@ -32,7 +35,6 @@ export default function Home ({ data = IHomePage }) {
           </div>
           <Chevron />
         </Section>
-        {/* <Section theme='gray' intermedian='true' next-theme='gray'> </Section> */}
         <Section theme='gray' intermedian='true' next-theme='dark'>
           <div className='o-wrapper'>
             <Headding text={data?.sections?.projects} />
@@ -43,9 +45,7 @@ export default function Home ({ data = IHomePage }) {
             />
           </div>
         </Section>
-        <Section id='typography' theme='dark'>
-          <div className='o-wrapper'> </div>
-        </Section>
+        <Section id='typography' theme='dark' />
       </main>
 
       <div className='mouse-tracker' />
