@@ -6,21 +6,15 @@ import Chevron from 'components/chevron'
 import Compare from 'components/layout/comparing'
 import Header from 'components/layout/header'
 import { IDemoPage } from '@/interface/index'
-import Headding from 'components/layout/headding'
-import Linkedin from 'components/seo/linkedin'
-import MegaHeadding from 'components/layout/headdingAccent'
-import Section from 'components/layout/section'
-import Slider from 'components/slider/customSlider'
+import PageSEO from '@/component/seo'
 
 export default function DemoPage ({ data = IDemoPage }) {
   return (
     <>
-      <Head>
-        <title>{data?.meta?.title}</title>
-        <meta name='description' content={data?.meta?.descriptions} />
-        <link rel='icon' href='/favicon.ico' />
-        <Linkedin />
-      </Head>
+      <PageSEO
+        title={serverData?.meta?.title}
+        description={serverData?.meta?.description}
+      />
 
       <Header menu={data?.menu} />
 

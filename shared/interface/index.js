@@ -13,7 +13,7 @@ export const ICard = {
 
 export const IMeta = {
   title: '',
-  descriptions: ''
+  description: ''
 }
 
 export const IMenu = {

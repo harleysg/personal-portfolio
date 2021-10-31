@@ -5,21 +5,15 @@ import apiData from './api/index'
 import Chevron from 'components/chevron'
 import Header from 'components/layout/header'
 import { IHomePage } from '@/interface/index'
-import Headding from 'components/layout/headding'
-import Linkedin from 'components/seo/linkedin'
-import MegaHeadding from 'components/layout/headdingAccent'
-import Section from 'components/layout/section'
-import Slider from 'components/slider/customSlider'
+import PageSEO from '@/component/seo'
 
 export default function Home ({ data = IHomePage }) {
   return (
     <>
-      <Head>
-        <title>{data?.meta?.title}</title>
-        <meta name='description' content={data?.meta?.descriptions} />
-        <link rel='icon' href='/favicon.ico' />
-        <Linkedin />
-      </Head>
+      <PageSEO
+        title={data?.meta?.title}
+        description={data?.meta?.description}
+      />
 
       <Header menu={data?.menu} />
 

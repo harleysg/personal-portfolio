@@ -5,22 +5,15 @@ import apiData from '../api/projects'
 import Compare from 'components/layout/comparing'
 import Header from 'components/layout/header'
 import { IProjectPage } from '@/interface/index'
-import Headding from 'components/layout/headding'
-import Linkedin from 'components/seo/linkedin'
-import MegaHeadding from 'components/layout/headdingAccent'
-import Section from 'components/layout/section'
-import Slider from 'components/slider/customSlider'
-import Video from 'components/video'
+import PageSEO from '@/component/seo'
 
 export default function ProjectPage ({ serveData = IProjectPage }) {
   return (
     <>
-      <Head>
-        <title>{serveData?.meta?.title}</title>
-        <meta name='description' content={serveData?.meta?.descriptions} />
-        <link rel='icon' href='/favicon.ico' />
-        <Linkedin />
-      </Head>
+      <PageSEO
+        title={serveData?.meta?.title}
+        description={serveData?.meta?.description}
+      />
 
       <Header menu={serveData?.menu} />
 
