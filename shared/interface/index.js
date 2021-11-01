@@ -86,6 +86,21 @@ export const IProjectPage = {
 
 export const IMediaQueryList = { media: '', label: '', match: false }
 
+export const IOGImage = {
+  url: '',
+  width: '',
+  height: '',
+  type: 'image/png'
+}
+
+export const IOGData = {
+  title: '',
+  type: '',
+  url: '',
+  description: '',
+  image: IOGImage
+}
+
 export const ISlider = {
   mediaQuery: IMediaQueryList,
   slides: [],
