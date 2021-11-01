@@ -10,21 +10,23 @@ import PageSEO from '@/component/seo'
 import Section from '@/component/layout/section'
 import Slider from '@/component/slider/customSlider'
 
-export default function Home ({ data = IHomePage }) {
+export default function Home ({ indexData = IHomePage }) {
   return (
     <>
       <PageSEO
-        title={data?.meta?.title}
-        description={data?.meta?.description}
+        title={indexData?.meta?.title}
+        description={indexData?.meta?.description}
       />
 
-      <Header menu={data?.menu} />
+      <Header menu={indexData?.menu} />
 
       <main className='o-main'>
+
         <Section theme='gray'>
-          <MegaHeadding text={data?.sections?.welcome?.megaHeadding} />
+          <MegaHeadding text={indexData?.sections?.welcome?.megaHeadding} />
+
           <div className='o-wrapper'>
-            <Headding text={data?.sections?.welcome} />
+            <Headding text={indexData?.sections?.welcome} />
             <div className='c-welcome_message'>
               <div className='c-welcome_message'>
                 <h3 className='c-welcome_enfasis'>
@@ -33,19 +35,19 @@ export default function Home ({ data = IHomePage }) {
               </div>
             </div>
           </div>
+
           <Chevron />
         </Section>
-        <Section theme='gray' intermedian='true' next-theme='dark'>
-          <div className='o-wrapper'>
-            <Headding text={data?.sections?.projects} />
-            <Slider
-              mediaQuery={{ media: '(max-width: 576px)', label: 'isMobile' }}
-              slides={data?.sections?.projects?.data?.images}
-              className='isCustom'
-            />
-          </div>
+        <Section theme='gray' intermedian='true' next-theme='dark' wrapper='true'>
+          <Headding text={indexData?.sections?.projects} />
+          <Slider
+            mediaQuery={{ media: '(max-width: 576px)', label: 'isMobile' }}
+            slides={indexData?.sections?.projects?.data?.images}
+            className='isCustom'
+          />
         </Section>
-        <Section id='typography' theme='dark' />
+        <Section id='typography' theme='dark' wrapper='true' />
+
       </main>
 
       <div className='mouse-tracker' />
@@ -54,7 +56,7 @@ export default function Home ({ data = IHomePage }) {
 }
 
 export async function getServerSideProps () {
-  const data = apiData()
+  const indexData = apiData()
 
-  return { props: { data } }
+  return { props: { indexData } }
 }
