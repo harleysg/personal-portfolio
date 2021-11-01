@@ -1,34 +1,40 @@
 import Head from 'next/head'
 
 import { IOGData } from '@/interface/index'
+import { VERCEL_URL } from '@/shared/constants.js'
 
-Object.entries(IOGData).forEach(([key, value]) => {
-  key === 'description' && (IOGData[value] = 'based on University project design Cudio Studio')
-  key === 'image' && (IOGData[value].url = `${process.env.NEXT_PUBLIC_VERCEL_URL}/images/preview.png`)
-  key === 'type' && (IOGData[value] = 'website')
-  key === 'url' && (IOGData[value] = process.env.NEXT_PUBLIC_VERCEL_URL)
+Object.entries(IOGData).forEach(([key]) => {
+  key === 'description' && (IOGData.description = 'based on University project design Cudio Studio')
+  key === 'image' && (IOGData.image.url &&= `${VERCEL_URL}/images/preview.png`)
+  key === 'type' && (IOGData.type = 'website')
+  key === 'url' && (IOGData.url = VERCEL_URL)
 })
 
-export default function OpenGraphProtocol ({
-  twitterOn = false,
-  ...IOGData
-}) {
+export default function OpenGraphProtocol (props) {
+  const {
+    twitterOn = false,
+    op = {
+      ...IOGData,
+      ...props
+    }
+  } = props
+
   return (
     <Head>
-      <meta property='og:description' content={IOGData.description} key='description' />
-      <meta property='og:image' content={IOGData.image.url} key='image' />
+      <meta property='og:description' content={op.description} key='description' />
+      <meta property='og:image' content={op.image?.url} key='image' />
       <meta property='og:locale' content='es_CO' />
       <meta property='og:locale:alternate' content='en_US' />
-      <meta property='og:title' content={IOGData.title} key='title' />
-      <meta property='og:type' content={IOGData.type} />
-      <meta property='og:url' content={IOGData.url} key='url' />
+      <meta property='og:title' content={op.title} key='title' />
+      <meta property='og:type' content={op.type} />
+      <meta property='og:url' content={op.url} key='url' />
       {
         twitterOn && (
           <TwitterOG
-            title={IOGData.title}
+            title={op.title}
             site=''
-            description={IOGData.description}
-            image={IOGData.image.url}
+            description={op.description}
+            image={op.image.url}
           />
         )
       }
