@@ -5,6 +5,7 @@
       "@/styles/*": ["assets/styles/*"],
       "@/component/*": ["components/*"],
       "@/interface/*": ["shared/interface/*"],
+      "@/shared/*": ["shared/*"],
     }
   }
 }
