@@ -1,8 +1,11 @@
 export default function Section (props) {
-  const { children, theme, id, hasWrapper = false, intermedian } = props
+  const { children, theme, id, wrapper = false, intermedian } = props
 
-  const HasWrapper = ({ children }) =>
-    hasWrapper ? <div className='o-wrapper'>{children}</div> : <>{children}</>
+  const HasWrapper = ({ children }) => (
+    wrapper
+      ? <div className='o-wrapper'>{children}</div>
+      : <>{children}</>
+  )
 
   return (
     <section
