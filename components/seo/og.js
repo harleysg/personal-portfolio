@@ -1,40 +1,38 @@
 import Head from 'next/head'
 
 import { IOGData } from '@/interface/index'
-import { VERCEL_URL } from '@/shared/constants.js'
+import { VERCEL_URL, LOCALHOST } from '@/shared/constants.js'
+import { taggedTemplate } from '@/shared/services/index'
+
+const url = (aditional = '') => taggedTemplate`https://${VERCEL_URL || LOCALHOST}${aditional}`
 
 Object.entries(IOGData).forEach(([key]) => {
-  key === 'description' && (IOGData.description = 'based on University project design Cudio Studio')
-  key === 'image' && (IOGData.image.url &&= `${VERCEL_URL}/images/preview.png`)
   key === 'type' && (IOGData.type = 'website')
-  key === 'url' && (IOGData.url = VERCEL_URL)
+  key === 'url' && (IOGData.url = url``)
+  key === 'image' && (IOGData[key].url = url`/images/preview.png`)
+  key === 'description' && (IOGData.description = 'based on University project design Cudio Studio')
 })
 
 export default function OpenGraphProtocol (props) {
-  const {
-    twitterOn = false,
-    op = {
-      ...IOGData,
-      ...props
-    }
-  } = props
+  const { twitterOn = false } = props
+  const og = { ...IOGData, ...props }
 
   return (
     <Head>
-      <meta property='og:description' content={op.description} key='description' />
-      <meta property='og:image' content={op.image?.url} key='image' />
+      <meta property='og:description' content={og.description} key='description' />
+      <meta property='og:image' content={og.image?.url} key='image' />
       <meta property='og:locale' content='es_CO' />
       <meta property='og:locale:alternate' content='en_US' />
-      <meta property='og:title' content={op.title} key='title' />
-      <meta property='og:type' content={op.type} />
-      <meta property='og:url' content={op.url} key='url' />
+      <meta property='og:title' content={og.title} key='title' />
+      <meta property='og:type' content={og.type} />
+      <meta property='og:url' content={og.url} key='url' />
       {
         twitterOn && (
           <TwitterOG
-            title={op.title}
-            site=''
-            description={op.description}
-            image={op.image.url}
+            title={og.title}
+            site={og.type}
+            description={og.description}
+            image={og.image.url}
           />
         )
       }
