@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import types from 'prop-types'
 import style from './_index.module.scss'
 
@@ -8,7 +10,11 @@ export default function Header ({ menu = IMenu }) {
     <header className={style['o-header']}>
       <div className={`o-wrapper ${style['o-header_wrapper']}`}>
         <span className={`${style['o-logo']}`}>
-          <LogoSvg />
+          <Link href='/'>
+            <a>
+              <LogoSvg />
+            </a>
+          </Link>
         </span>
         <nav className={style['o-menu']}>
           <button className={style['o-menu_btn']}>
@@ -35,9 +41,11 @@ function Menu ({ menu = IMenu }) {
       <ul className={`${style['o-menu_options']}`}>
         {menu.map(({ link, text }, i) => (
           <li key={i} className={`${style['o-menu_options-item']} js-menu`}>
-            <a className={style['o-menu_options-link']} href={link}>
-              {text}
-            </a>
+            <Link href={link}>
+              <a className={style['o-menu_options-link']}>
+                {text}
+              </a>
+            </Link>
           </li>
         ))}
       </ul>
