@@ -20,7 +20,7 @@ export default function handler () {
     welcome: {
       indicator: 'indicator',
       content: 'content',
-      enfasis: 'enphasis',
+      enfasis: 'emphasis',
       megaHeadding: 'megaHeading',
       space: true
     },
