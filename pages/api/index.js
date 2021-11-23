@@ -3,7 +3,7 @@
 export default function handler () {
   const menu = [
     { link: '#', text: 'welcome' },
-    { link: 'demo', text: 'Demo' }
+    { link: '/demo', text: 'Demo' }
   ]
 
   const author = {

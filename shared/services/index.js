@@ -7,3 +7,10 @@ export const taggedTemplate = (strings, ...raw) => {
 
   return message.join('')
 }
+
+export const pageview = (url) => {
+  window && window.dataLayer.push({
+    event: 'pageview',
+    page: url
+  })
+}

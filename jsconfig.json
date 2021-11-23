@@ -6,6 +6,7 @@
       "@/component/*": ["components/*"],
       "@/interface/*": ["shared/interface/*"],
       "@/shared/*": ["shared/*"],
+      "@/services/*": ["shared/services/*"],
     }
   }
 }

@@ -46,7 +46,7 @@ export default function Home ({ indexData = IHomePage }) {
             className='isCustom'
           />
         </Section>
-        <Section id='typography' theme='dark' wrapper='true' />
+        <Section anchor='typography' theme='dark' wrapper='true' />
 
       </main>
 
