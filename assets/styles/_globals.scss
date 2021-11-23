@@ -28,10 +28,13 @@
     min-height: calc(var(--layout-section-min-height) + 10vh);
     background-color: var(--theme-section-bg);
     transition: transform 0.3s ease-in-out;
-    padding: var(--layout-header-size-height) 0
-    calc(var(--layout-header-size-height) / 1.5);
-    
-    &[data-intermedian=true] {
+    padding: var(--layout-header-size-height) 0 calc(var(--layout-header-size-height) / 1.5);
+
+    &_anchor {
+      transform: translateY(-10px);
+    }
+
+    &[data-intermedian='true'] {
       --intermedian-variant-gap: 4;
       min-height: auto;
       margin-bottom: calc(var(--layout-header-size-height) * (var(--intermedian-variant-gap) * -1));
@@ -57,6 +60,7 @@
       height: 100%;
       padding: calc(var(--layout-header-size-height) * 1.5) 0 0;
     }
+
     &.u-extra {
       height: 130vh;
     }

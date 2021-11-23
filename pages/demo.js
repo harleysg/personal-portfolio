@@ -47,7 +47,7 @@ export default function DemoPage ({ serverData = IDemoPage }) {
             />
           </div>
         </Section>
-        <Section id='typography' theme='gold'>
+        <Section anchor='typography' theme='gold'>
           <div className='o-wrapper'>
             <Headding text={serverData?.sections?.guide_typo} />
             <Compare
@@ -74,7 +74,7 @@ export default function DemoPage ({ serverData = IDemoPage }) {
             />
           </div>
         </Section>
-        <Section id='form' theme='dark'>
+        <Section anchor='form' theme='dark'>
           <div className='o-wrapper'>
             <Compare
               left={<Headding text={serverData?.sections?.guide_form} />}
