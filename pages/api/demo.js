@@ -2,10 +2,9 @@
 
 export default function handler () {
   const menu = [
-    { link: '#', text: 'welcome' },
+    { link: '/', text: 'Home' },
     { link: '#typography', text: 'typography' },
     { link: '#form', text: 'forms' },
-    { link: '/', text: 'Home' }
   ]
 
   const author = {

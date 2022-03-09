@@ -31,14 +31,14 @@
     padding: var(--layout-header-size-height) 0 calc(var(--layout-header-size-height) / 1.5);
 
     &_anchor {
-      transform: translateY(-10px);
+      transform: translateY(calc((var(--layout-header-size-height) * -1) + 15px));;
     }
 
     &[data-intermedian='true'] {
       --intermedian-variant-gap: 4;
       min-height: auto;
       margin-bottom: calc(var(--layout-header-size-height) * (var(--intermedian-variant-gap) * -1));
-      padding: 0;
+      // padding: 0;
       position: relative;
       z-index: 2;
       background: linear-gradient(
@@ -115,9 +115,59 @@
       padding: 2rem 0;
     }
   }
+
   &video {
     &_wrapper {
       display: grid;
+    }
+  }
+
+  &intro {
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    align-items: center;
+    justify-content: center;
+    
+    @media screen and (max-width: 920px) {
+      grid-template-columns: 1fr;
+      padding: 0 5rem;
+    }
+    
+    @media screen and (max-width: 580px) {
+      padding: 0 0;
+      flex-direction: column;
+    }
+  }
+
+  &avatar-sprite {
+    --w: 400;
+    --ratio: 1.0833333333333333;
+    --steps: 8;
+
+    width: 100%;
+    max-width: calc(var(--w) * 1px);
+    height: calc((var(--w) * var(--ratio)) * 1px);
+    overflow: hidden;
+    margin: auto;
+    background-image: url(/images/moods-sprite.png);
+    background-size: cover;
+    
+    &:hover {
+      animation: sprite 2s steps(8) infinite;
+    }
+    
+    @media screen and (max-width: 720px) {
+      --w: 360;
+    }
+    
+    @media screen and (max-width: 580px) {
+      --w: 250;
+    }
+
+    @keyframes sprite {
+      to { 
+        background-position: calc((var(--w) * var(--steps)) * -1px );
+      }
     }
   }
 }

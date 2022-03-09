@@ -1,21 +1,29 @@
-export default function Section (props) {
-  const { children, theme, anchor, wrapper = false, intermedian } = props
+import { createElement } from 'react'
 
-  const HasWrapper = ({ children }) => (
-    wrapper
-      ? <div className='o-wrapper'>{children}</div>
-      : <>{children}</>
-  )
+export default function Section (props) {
+  const {
+    children,
+    theme,
+    anchor,
+    wrapper = false,
+    intermedian,
+    as = 'section'
+  } = props
+
+  const Wrapper = ({ children }) =>
+    wrapper ? <div className='o-wrapper'>{children}</div> : <>{children}</>;
+
+  const Container = ({ children, ...props }) => createElement(as, props, children);
 
   return (
-    <section
+    <Container
       className='o-section'
       data-theme={theme}
       data-intermedian={intermedian}
       {...props}
     >
-      <div id={anchor} className='o-section_anchor' />
-      <HasWrapper>{children}</HasWrapper>
-    </section>
+      {anchor && <div id={anchor} className='o-section_anchor' />}
+      <Wrapper>{children}</Wrapper>
+    </Container>
   )
 }
