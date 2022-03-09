@@ -1,3 +1,4 @@
+import types from 'prop-types'
 
 export const ICard = {
   name: '',
@@ -11,15 +12,25 @@ export const ICard = {
   }
 }
 
+const IAuthor = {
+  id: '01',
+  name: 'Harley Santos Garzon',
+  title: 'Frontend Developer',
+  description: 'Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón.',
+  mail: 'harley.santos.garzon@mail.com'
+}
+
 export const IMeta = {
   title: '',
   description: ''
 }
 
-export const IMenu = {
-  link: '',
-  text: ''
-}
+export const IMenu = types.arrayOf(types.shape({
+  link: types.string.isRequired,
+  text: types.string,
+  id: types.string
+}))
+
 
 export const IHeading = {
   indicator: '',
@@ -30,6 +41,7 @@ export const IHeading = {
 
 export const ISection = {
   IHeading,
+  anchor: types.string,
   megaHeadding: '',
   data: {
     images: [],
@@ -57,7 +69,12 @@ export const IDemoPage = {
 export const IHomePage = {
   ...IData,
   sections: {
-    welcome: ISection,
+    welcome: {
+      ...ISection,
+      data: {
+        author: IAuthor
+      }
+    },
     projects: ISection
   }
 }
