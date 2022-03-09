@@ -2,16 +2,17 @@
 
 export default function handler () {
   const menu = [
-    { link: '#', text: 'welcome' },
+    { link: '#projects', text: 'Projects' },
     { link: '/demo', text: 'Demo' }
   ]
 
   const author = {
     id: '01',
-    name: 'Harley Santos Garzon',
+    name: 'Harley Santos Garzón',
     title: 'Frontend Developer',
-    description: 'Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón.',
-    mail: 'harley.santos.garzon@mail.com'
+    description: 'Productor multimedia, diseñador gráfico, desarrollador Frontend, músico empirico y bajista de corazón.',
+    mail: 'harley.santos.garzon@mail.com',
+    socialMedia: {}
   }
 
   const sections = {
@@ -26,9 +27,10 @@ export default function handler () {
       }
     },
     projects: {
-      indicator: 'Projects',
-      enfasis: 'Graphic',
-      content: 'design',
+      indicator: '',
+      enfasis: 'My',
+      content: 'Projects',
+      anchor: "projects",
       space: true,
       data: {
         images: [
@@ -49,6 +51,7 @@ export default function handler () {
   return {
     sections,
     menu,
-    meta
+    meta,
+    author
   }
 }
