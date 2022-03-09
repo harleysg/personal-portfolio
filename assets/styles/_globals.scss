@@ -121,4 +121,53 @@
       display: grid;
     }
   }
+
+  &intro {
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    align-items: center;
+    justify-content: center;
+    
+    @media screen and (max-width: 920px) {
+      grid-template-columns: 1fr;
+      padding: 0 5rem;
+    }
+    
+    @media screen and (max-width: 580px) {
+      padding: 0 0;
+      flex-direction: column;
+    }
+  }
+
+  &avatar-sprite {
+    --w: 400;
+    --ratio: 1.0833333333333333;
+    --steps: 8;
+
+    width: 100%;
+    max-width: calc(var(--w) * 1px);
+    height: calc((var(--w) * var(--ratio)) * 1px);
+    overflow: hidden;
+    margin: auto;
+    background-image: url(/images/moods-sprite.png);
+    background-size: cover;
+    
+    &:hover {
+      animation: sprite 2s steps(8) infinite;
+    }
+    
+    @media screen and (max-width: 720px) {
+      --w: 360;
+    }
+    
+    @media screen and (max-width: 580px) {
+      --w: 250;
+    }
+
+    @keyframes sprite {
+      to { 
+        background-position: calc((var(--w) * var(--steps)) * -1px );
+      }
+    }
+  }
 }
