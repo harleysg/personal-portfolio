@@ -31,14 +31,14 @@
     padding: var(--layout-header-size-height) 0 calc(var(--layout-header-size-height) / 1.5);
 
     &_anchor {
-      transform: translateY(-10px);
+      transform: translateY(calc((var(--layout-header-size-height) * -1) + 15px));;
     }
 
     &[data-intermedian='true'] {
       --intermedian-variant-gap: 4;
       min-height: auto;
       margin-bottom: calc(var(--layout-header-size-height) * (var(--intermedian-variant-gap) * -1));
-      padding: 0;
+      // padding: 0;
       position: relative;
       z-index: 2;
       background: linear-gradient(
@@ -115,6 +115,7 @@
       padding: 2rem 0;
     }
   }
+
   &video {
     &_wrapper {
       display: grid;

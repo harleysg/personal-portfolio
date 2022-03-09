@@ -14,17 +14,21 @@ html {
   &[data-theme='gold'] {
     --theme-header-bg: hsla(47, 90%, 56%, 0.5);
     --theme-menu-link-color: var(--color-1);
+    --theme-menu-link-ascent: var(--color-1);
   }
   &[data-theme='light'] {
     --theme-menu-link-color: var(--color-1);
+    --theme-menu-link-ascent: var(--color-a);
   }
   &[data-theme='gray'] {
     --theme-menu-link-color: var(--color-1);
+    --theme-menu-link-ascent: var(--color-a);
     --theme-header-bg: hsla(var(--color_0_hsl), 0.4);
   }
   &[data-theme='dark'] {
     --theme-header-bg: rgba(0, 0, 0, 0.2);
     --theme-menu-link-color: var(--color-w);
+    --theme-menu-link-ascent: var(--color-a);
     --theme-svg-logo-fill: var(--color-w);
   }
 }

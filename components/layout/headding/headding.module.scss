@@ -14,10 +14,13 @@
     color: var(--theme-headding-color);
 
     &-indicator {
+        --space-left: 5px;
+
         position: relative;
         font-family: var(--font-medium);
         color: var(--theme-headding-indicator);
         font-size: clamp(0.7em, 8vmin, 1.1em);
+        padding-left: var(--space-left);
 
         &::after {
             content: '';
@@ -25,7 +28,7 @@
             min-height: var(--layout-headding-indicator-height);
             position: absolute;
             top: calc(100% + 0.5rem);
-            left: 0;
+            left: var(--space-left);
             background-color: var(--theme-headding-separador);
         }
     }
