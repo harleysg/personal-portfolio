@@ -7,6 +7,8 @@
       "@/interface/*": ["shared/interface/*"],
       "@/shared/*": ["shared/*"],
       "@/services/*": ["shared/services/*"],
+      "@/utils/*": ["utils/*"],
+      "@/hooks/*": ["hooks/*"],
     }
   }
 }
