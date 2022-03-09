@@ -9,8 +9,12 @@ export const taggedTemplate = (strings, ...raw) => {
 }
 
 export const pageview = (url) => {
-  window && window.dataLayer.push({
-    event: 'pageview',
-    page: url
-  })
+  if (window) {
+    window.dataLayer = window.dataLayer || []
+
+    window.dataLayer.push({
+      event: 'pageview',
+      page: url
+    })
+  }
 }
