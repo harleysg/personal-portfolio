@@ -40,3 +40,10 @@ yarn-error.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+
+# Linte
+.eslintrc.js
+.eslintignore
+.prettierrc.json
+.prettierignore
+
