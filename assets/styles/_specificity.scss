@@ -40,7 +40,7 @@ html {
   }
 
   &[data-theme='gold'] {
-    --theme-card-before-border-bg: var(--color-c);
+    --theme-contrast: var(--color-b);
     --theme-headding-enfasis: var(--color-w);
     --theme-headding-enfasis-shadow: var(--color-1);
     --theme-headding-separador: var(--color-w);
@@ -48,7 +48,7 @@ html {
     --theme-mega-headding-color: #f4c82a;
     --theme-mega-headding-shadow: 30, 30, 30;
     --theme-section-bg: var(--color-a);
-    --theme-contrast: var(--color-b);
+    --theme-card-before-border-bg: hsl(var(--contrast_hsl), 0.8);
   }
 
   &[next-theme='light'] {
@@ -58,14 +58,14 @@ html {
   &[data-theme='light'] {
     --theme-headding-enfasis: var(--color-a);
     --theme-headding-enfasis-shadow: var(--color-w);
+    --theme-headding-indicator: var(--color-1);
     --theme-headding-separador: var(--color-a);
     --theme-mega-headding-color: var(--color-w);
     --theme-mega-headding-shadow: 0, 0, 0;
-    --theme-card-content-bg: var(--color-w);
-    --theme-card-before-border-bg: var(--color-a);
-    --theme-headding-indicator: var(--color-1);
     --theme-section-bg: var(--color-w);
     --theme-contrast: var(--color-b);
+    --theme-card-content-bg: var(--color-w);
+    --theme-card-before-border-bg: var(--color-a);
   }
 
   &[next-theme='gray'] {
@@ -76,9 +76,10 @@ html {
     --theme-headding-enfasis: var(--color-a);
     --theme-headding-enfasis-shadow: var(--color-1);
     --theme-headding-separador: var(--color-1);
-    --theme-card-content-bg: var(--color-a);
     --theme-section-bg: var(--color-0);
     --theme-contrast: var(--color-b);
+    --theme-card-content-bg: var(--color-w);
+    --theme-card-before-border-bg: var(--theme-contrast);
   }
 
   &[next-theme='dark'] {
@@ -87,13 +88,19 @@ html {
 
   &[data-theme='dark'] {
     --theme-body-color: var(--color-w);
+    --theme-section-bg: var(--color-1);
+    --theme-contrast: var(--color-a);
     --theme-headding-enfasis: var(--color-a);
     --theme-headding-enfasis-shadow: var(--color-b);
     --theme-headding-separador: var(--color-a);
     --theme-headding-color: var(--color-w);
     --theme-headding-indicator: var(--color-w);
-    --theme-section-bg: var(--color-1);
-    --theme-contrast: var(--color-a);
+    --theme-card-content-color: var(--color-b);
+    --theme-card-before-border-bg: var(--theme-contrast);
+
+    --theme-scroll-track-bg: hsl(var(--color-d_hsl), 0.05);
+    --theme-scroll-thumb-bg: hsl(var(--color-d_hsl), 0.15);
+    --theme-scroll-thumb-bg-hover: var(--theme-contrast);
   
     color: var(--theme-body-color);
   }

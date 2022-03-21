@@ -2,6 +2,8 @@
 
 :root {
   --color_0_hsl: 0, 0%, 94%;
+  --color-d_hsl: 0, 0%, 76%;
+  --contrast_hsl: 0, 0%, 8%;
 
   --duration: 1.6s;
   --easing: cubic-bezier(0.2, 0, 0.3, 1);
@@ -39,6 +41,7 @@
   --theme-section-bg-next: var(--color-w);
   
   --theme-card-content-bg: var(--color-w);
+  --theme-card-content-color: var(--color-b);
   --theme-card-before-border-bg: var(--color-1);
   
   --theme-svg-logo-fill: var(--color-1);
@@ -47,6 +50,10 @@
   --theme-menu-link-ascent: var(--color-a);
   --theme-mega-headding-color: var(--color-w);
   --theme-mega-headding-shadow: 0, 0, 0;
+
+  --theme-scroll-track-bg: hsl(var(--contrast_hsl), 0.1);
+  --theme-scroll-thumb-bg: hsl(var(--contrast_hsl), 0.1);
+  --theme-scroll-thumb-bg-hover: hsl(var(--contrast_hsl), 0.5);
 
   --modal-border-size: 2px;
 
