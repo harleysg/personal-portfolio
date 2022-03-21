@@ -1,0 +1,77 @@
+@mixin transform($time: 600ms) {
+  transition: transform $time ease-in-out;
+  will-change: transform;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(95, 3ch);
+  grid-auto-columns: 3ch;
+  align-items: center;
+  gap: 1ch 0;
+
+  margin-bottom: 8ch;
+  padding: 20px 0;
+  overflow-x: auto;
+  transform: scale(0.98);
+  @include transform();
+
+  /* ---------- Child --------- */
+  > *:first-child,
+  > *:nth-child(4n + 1) {
+    margin-top: -5ch;
+  }
+
+  > *:nth-child(5n + 1) {
+    margin-top: 5ch;
+  }
+
+  > *:nth-child(10n + 1),
+  > *:first-child {
+    grid-column-start: 3;
+  }
+
+  > * {
+    grid-column-end: span 18;
+
+    transform: scale(0.95);
+    @include transform(200ms);
+  }
+
+  /* ---------- Hover --------- */
+  & > *:hover {
+    transform: scale(1);
+  }
+
+  &:hover {
+    transform: scale(1);
+
+    &::-webkit-scrollbar-track {
+      background: var(--theme-scroll-track-bg);
+    }
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb {
+      background: var(--theme-scroll-thumb-bg-hover);
+    }
+  }
+
+  /* ---------- Scroll --------- */
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    height: 3px;
+    @include transform();
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    @include transform();
+    background-color: var(--theme-scroll-track-bg);
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    @include transform();
+    background: var(--theme-scroll-thumb-bg);
+  }
+}
