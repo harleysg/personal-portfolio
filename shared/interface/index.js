@@ -5,10 +5,14 @@ export const ICard = {
   title: '',
   description: '',
   mail: '',
+  html_url: '',
   image: {
     url: '',
     width: 0,
     height: 0
+  },
+  options: {
+    max_content: false
   }
 }
 
@@ -16,7 +20,8 @@ const IAuthor = {
   id: '01',
   name: 'Harley Santos Garzon',
   title: 'Frontend Developer',
-  description: 'Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón.',
+  description:
+    'Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón.',
   mail: 'harley.santos.garzon@mail.com'
 }
 
@@ -25,12 +30,13 @@ export const IMeta = {
   description: ''
 }
 
-export const IMenu = types.arrayOf(types.shape({
-  link: types.string.isRequired,
-  text: types.string,
-  id: types.string
-}))
-
+export const IMenu = types.arrayOf(
+  types.shape({
+    link: types.string.isRequired,
+    text: types.string,
+    id: types.string
+  })
+)
 
 export const IHeading = {
   indicator: '',
@@ -53,7 +59,7 @@ export const IData = {
   meta: IMeta,
   menu: IMenu,
   data: {},
-  sections: { }
+  sections: {}
 }
 
 export const IDemoPage = {

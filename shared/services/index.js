@@ -1,3 +1,5 @@
+import { fetcher } from './fetcher'
+
 export const taggedTemplate = (strings, ...raw) => {
   const message = strings.slice()
 
@@ -18,3 +20,5 @@ export const pageview = (url) => {
     })
   }
 }
+
+export { fetcher }

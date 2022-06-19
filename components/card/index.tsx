@@ -7,7 +7,7 @@ export default function Card({
   name,
   title,
   description,
-  mail,
+  html_url: url,
   image,
   options
 } = ICard) {
@@ -30,11 +30,18 @@ export default function Card({
             {description}
           </p>
           <div>
-            <small>
-              <a className={css['card_link-email']} href={`mailto:${mail}`}>
-                {mail}
-              </a>
-            </small>
+            {url && (
+              <small>
+                <a
+                  className={css['card_link-email']}
+                  href={`${url}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ver más detalle
+                </a>
+              </small>
+            )}
           </div>
         </figcaption>
       </div>

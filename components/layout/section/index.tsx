@@ -1,7 +1,7 @@
-import { Children, createElement } from 'react'
+import { createElement, ReactNode } from 'react'
 
 interface IProps {
-  children: typeof Children
+  children: ReactNode
   theme: string
   anchor?: string
   wrapper?: boolean
@@ -11,16 +11,18 @@ interface IProps {
   compact?: boolean
 }
 
-export default function Section({
-  children,
-  theme,
-  anchor,
-  wrapper = false,
-  intermedian,
-  as = 'section',
-  hiddenx = false,
-  compact = false
-}: IProps) {
+export default function Section(props: IProps) {
+  const {
+    children,
+    theme,
+    anchor,
+    wrapper = false,
+    intermedian,
+    as = 'section',
+    hiddenx = false,
+    compact = false
+  } = props
+
   const Wrapper = ({ children }) =>
     wrapper ? <div className="o-wrapper">{children}</div> : <>{children}</>
 
