@@ -87,8 +87,11 @@
     min-width: 26ch;
   }
 
-  &_link-email {
+  &_link {
     color: var(--color-a);
+    border: none;
+    box-shadow: none;
+    padding-inline: 0;
   }
 }
 

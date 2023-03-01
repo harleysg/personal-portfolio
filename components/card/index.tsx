@@ -3,18 +3,46 @@ import { ICard } from '@/interface/index'
 
 import css from './card.module.scss'
 
-export default function Card({
-  name,
-  title,
-  description,
-  html_url: url,
-  image,
-  options
-} = ICard) {
+interface CardProps {
+  name: string,
+  title: string,
+  description: string,
+  url: string,
+  image: {
+    url: string;
+    width: number;
+    height: number;
+  },
+  options: {
+    // eslint-disable-next-line
+    max_content: boolean;
+  },
+  callback?: (a: HTMLElement) => void,
+  other: string
+}
+
+export default function Card(props: CardProps) {
+  const {
+    name,
+    title,
+    description,
+    url = ICard.html_url,
+    image,
+    options,
+    callback
+  } = props
+
+  const handleCallBack = () => {
+    if (typeof callback === 'function') {
+      // eslint-disable-next-line node/no-callback-literal
+      callback(document.activeElement as HTMLElement)
+    }
+  }
+
   return (
     <figure
       className={css.card}
-      style={{ gridColumnEnd: !image ? 'span 12' : null }}
+      style={{ gridColumnEnd: !image ? 'span 10' : null }}
     >
       <div className={css.card_content}>
         <figcaption className={css.card_caption}>
@@ -32,14 +60,14 @@ export default function Card({
           <div>
             {url && (
               <small>
-                <a
-                  className={css['card_link-email']}
-                  href={`${url}`}
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+                  role={'button'}
+                  tabIndex={0}
+                  className={css.card_link}
+                  onClick={() => handleCallBack()}
                 >
                   Ver más detalle
-                </a>
+                </button>
               </small>
             )}
           </div>
