@@ -7,8 +7,9 @@ export default function GridCard({ children, ...props }) {
 
   useEffect(() => {
     const $el = $main.current
-    if ($el && !props['scroll-enable'])
-      $el.scrollLeft = ($el.scrollWidth - $el.clientWidth) / 2
+    if ($el && !props['scroll-enable']) {
+      $el.scrollLeft = ($el.scrollWidth - $el.clientWidth) / 2.5
+    }
   }, [])
   return (
     <div

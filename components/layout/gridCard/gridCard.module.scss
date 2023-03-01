@@ -1,6 +1,5 @@
-@mixin transform($time: 600ms) {
+@mixin transition($time: 600ms) {
   transition: transform $time ease-in-out;
-  will-change: transform;
 }
 
 .grid-cards {
@@ -15,7 +14,8 @@
   padding: 10ch 0;
   overflow-x: auto;
   transform: scale(0.98);
-  @include transform();
+
+  @include transition();
 
   &:nth-child(2n) {
     margin-top: 8ch;
@@ -39,18 +39,11 @@
   > * {
     grid-column-end: span 18;
 
-    transform: scale(0.95);
-    @include transform(200ms);
+    @include transition(200ms);
   }
 
   /* ---------- Hover --------- */
-  & > *:hover {
-    transform: scale(1);
-  }
-
   &:hover {
-    transform: scale(1);
-
     &::-webkit-scrollbar-track {
       background: var(--theme-scroll-track-bg);
     }
@@ -66,18 +59,18 @@
   &::-webkit-scrollbar {
     height: 3px;
     width: 0;
-    @include transform();
+    @include transition();
   }
 
   /* Track */
   &::-webkit-scrollbar-track {
-    @include transform();
+    @include transition();
     background-color: var(--theme-scroll-track-bg);
   }
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    @include transform();
+    @include transition();
     background: var(--theme-scroll-thumb-bg);
   }
 }
