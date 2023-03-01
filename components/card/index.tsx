@@ -75,8 +75,6 @@ export default function Card(props: CardProps) {
       {image && (
         <picture className={css.card_image}>
           <Image
-            layout="fixed"
-            objectFit="cover"
             className={css['card_image-img']}
             width={image.width}
             height={image.height}
