@@ -1,17 +1,19 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default function handler() {
+  const repositories = fetch('https://api.github.com/users/harleysg/repos').then(data => data.json())
+
   const menu = [
     { link: '#projects', text: 'Projects' },
     { link: '/demo', text: 'Demo' }
   ]
 
   const author = {
-    id: '01',
+    id: 7086723,
     name: 'Harley Santos Garzón',
     title: 'Frontend Developer',
     description:
-      'Productor multimedia, diseñador gráfico, desarrollador Frontend, músico empirico y bajista de corazón.',
+      'Productor multimedia, diseñador gráfico, desarrollador Frontend, músico empirico y bajista.',
     mail: 'harley.santos.garzon@mail.com',
     socialMedia: {}
   }
@@ -166,6 +168,7 @@ export default function handler() {
     sections,
     menu,
     meta,
-    author
+    author,
+    repositories
   }
 }
