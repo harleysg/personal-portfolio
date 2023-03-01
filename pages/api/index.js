@@ -148,13 +148,21 @@ export default function handler() {
       }
     },
     projects: {
-      indicator: '',
-      enfasis: 'My',
-      content: 'Projects',
       anchor: 'projects',
-      space: true,
-      data: {
-        projects
+      design: {
+        indicator: '',
+        enfasis: 'Design',
+        content: 'Projects',
+        space: true,
+        data: {
+          projects
+        }
+      },
+      web: {
+        indicator: '',
+        enfasis: 'Web',
+        content: 'Projects',
+        space: true
       }
     }
   }

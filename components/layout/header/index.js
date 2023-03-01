@@ -11,9 +11,7 @@ export default function Header({ menu }) {
       <div className={`o-wrapper ${style['o-header_wrapper']}`}>
         <span className={`${style['o-logo']}`}>
           <Link href="#">
-            <a>
-              <Avatar />
-            </a>
+            <Avatar />
           </Link>
         </span>
         <nav className={style['o-menu']}>
@@ -37,10 +35,8 @@ function Menu({ menu = IMenu }) {
       <ul className={`${style['o-menu_options']}`}>
         {menu.map(({ link, text }, i) => (
           <li key={i} className={`${style['o-menu_options-item']} js-menu`}>
-            <Link href={link}>
-              <a className={style['o-menu_options-link']}>
-                {text}
-              </a>
+            <Link href={link} className={style['o-menu_options-link']}>
+              {text}
             </Link>
           </li>
         ))}
@@ -54,7 +50,7 @@ Menu.propTypes = {
 }
 
 function Avatar(props) {
-  return <Image src={'/images/avatar.png'} width={64} height={78} {...props}/>
+  return <Image alt="avatar" style={{ width: 'auto', height: 'auto' }} src={'/images/avatar.png'} width={64} height={78} {...props}/>
 }
 
 function BurguerSvg(props) {

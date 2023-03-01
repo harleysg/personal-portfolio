@@ -37,294 +37,297 @@ export default function Home({
     setMountPortal(false)
   }
 
-  return (
-    <>
-      <PageSEO title={meta?.title} description={meta?.description} />
+  return <>
+    <PageSEO title={meta?.title} description={meta?.description} />
 
-      <Header menu={menu} />
+    <Header menu={menu} />
 
-      <main className="o-main">
-        <Section theme="gray">
-          <MegaHeadding text={sections?.welcome?.megaHeadding} />
+    <main className="o-main">
+      <Section theme="gray">
+        <MegaHeadding text={sections?.welcome?.megaHeadding} />
 
-          <div className="o-wrapper">
-            <div className="c-intro">
-              <figure className="c-avatar-sprite" />
-              <div>
-                <Headding text={sections?.welcome} main={true} />
-                <div className="c-welcome_message">
-                  <h3 className="c-welcome_enfasis">
-                    {sections?.welcome?.data?.author?.description}
-                  </h3>
-                </div>
+        <div className="o-wrapper">
+          <div className="c-intro">
+            <figure className="c-avatar-sprite" />
+            <div>
+              <Headding text={sections?.welcome} main={true} />
+              <div className="c-welcome_message">
+                <h3 className="c-welcome_enfasis">
+                  {sections?.welcome?.data?.author?.description}
+                </h3>
               </div>
             </div>
           </div>
+        </div>
 
-          <Chevron />
-        </Section>
+        <Chevron />
+      </Section>
 
-        <Section
-          anchor={sections?.projects?.anchor}
-          theme="dark"
-          next-theme="dark"
-          hiddenx="true"
-        >
-          <div className="o-wrapper">
-            <Headding text={sections?.projects} />
-          </div>
-          <GridCard>
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-              image={{
-                url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
-                alt: 'Harley Santos Garzón',
-                width: 150,
-                height: 150
-              }}
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-              image={{
-                url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
-                alt: 'Harley Santos Garzón',
-                width: 150,
-                height: 150
-              }}
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-              image={{
-                url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
-                alt: 'Harley Santos Garzón',
-                width: 150,
-                height: 150
-              }}
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-              image={{
-                url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
-                alt: 'Harley Santos Garzón',
-                width: 150,
-                height: 150
-              }}
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-              image={{
-                url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
-                alt: 'Harley Santos Garzón',
-                width: 150,
-                height: 150
-              }}
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-              image={{
-                url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
-                alt: 'Harley Santos Garzón',
-                width: 150,
-                height: 150
-              }}
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-              image={{
-                url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
-                alt: 'Harley Santos Garzón',
-                width: 150,
-                height: 150
-              }}
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-              image={{
-                url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
-                alt: 'Harley Santos Garzón',
-                width: 300,
-                height: 300
-              }}
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-              image={{
-                url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
-                alt: 'Harley Santos Garzón',
-                width: 150,
-                height: 150
-              }}
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-              image={{
-                url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
-                alt: 'Harley Santos Garzón',
-                width: 150,
-                height: 150
-              }}
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-              image={{
-                url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
-                alt: 'Harley Santos Garzón',
-                width: 150,
-                height: 150
-              }}
-            />
-            <Card
-              callback={handlePortal}
-              options={{
-                max_content: true
-              }}
-              mail="CTO - Desarrollador frontend"
-              title="Harley Santos Garzón"
-              name="Harley Santos Garzón"
-              description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
-              image={{
-                url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
-                alt: 'Harley Santos Garzón',
-                width: 150,
-                height: 150
-              }}
-            />
-          </GridCard>
-        </Section>
+      <Section
+        anchor={sections?.projects?.anchor}
+        theme="dark"
+        next-theme="dark"
+        hiddenx="true"
+      >
+        <div className="o-wrapper">
+          <Headding text={sections?.projects.design} />
+        </div>
+        <GridCard>
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+            image={{
+              url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
+              alt: 'Harley Santos Garzón',
+              width: 150,
+              height: 150
+            }}
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+            image={{
+              url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
+              alt: 'Harley Santos Garzón',
+              width: 150,
+              height: 150
+            }}
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+            image={{
+              url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
+              alt: 'Harley Santos Garzón',
+              width: 150,
+              height: 150
+            }}
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+            image={{
+              url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
+              alt: 'Harley Santos Garzón',
+              width: 150,
+              height: 150
+            }}
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+            image={{
+              url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
+              alt: 'Harley Santos Garzón',
+              width: 150,
+              height: 150
+            }}
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+            image={{
+              url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
+              alt: 'Harley Santos Garzón',
+              width: 150,
+              height: 150
+            }}
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+            image={{
+              url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
+              alt: 'Harley Santos Garzón',
+              width: 150,
+              height: 150
+            }}
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+            image={{
+              url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
+              alt: 'Harley Santos Garzón',
+              width: 300,
+              height: 300
+            }}
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+            image={{
+              url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
+              alt: 'Harley Santos Garzón',
+              width: 150,
+              height: 150
+            }}
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+            image={{
+              url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
+              alt: 'Harley Santos Garzón',
+              width: 150,
+              height: 150
+            }}
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+            image={{
+              url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
+              alt: 'Harley Santos Garzón',
+              width: 150,
+              height: 150
+            }}
+          />
+          <Card
+            callback={handlePortal}
+            options={{
+              max_content: true
+            }}
+            mail="CTO - Desarrollador frontend"
+            title="Harley Santos Garzón"
+            name="Harley Santos Garzón"
+            description="Productor multimedia, diseñador gráfico y desarrollador Frontend, Músico empirico y bajista de corazón."
+            image={{
+              url: 'https://harleysg.github.io/portfolio-cubioStudio/assets/images/founders/founder_1.jpeg',
+              alt: 'Harley Santos Garzón',
+              width: 150,
+              height: 150
+            }}
+          />
+        </GridCard>
+      </Section>
 
-        <Section theme="gray" next-theme="light" hiddenx="true" compact="true">
-          <GridCard
-            data-foo={`${repositories.length}`}
-            scroll-enable={
-              repositories.length < 3 ? true : null
-            }
-          >
-            {sections.projects.data &&
-              repositories.map(({ id, ...props }) => !props.fork
-                ? (
-                  <Card {...props} key={id} callback={handlePortal}/>
-                )
-                : null)}
-          </GridCard>
-        </Section>
+      <Section
+        theme="gray"
+        next-theme="light"
+        hiddenx="true">
+        <div className="o-wrapper">
+          <Headding text={sections?.projects.web} />
+        </div>
+        <GridCard
+          data-foo={`${repositories.length}`}
+          colunms={43}
+          children-size={'span 8'}>
+          {
+            repositories.map(({ id, ...props }) => !props.fork
+              ? (
+                <Card {...props} key={id} callback={handlePortal}/>
+              )
+              : null)
+          }
+        </GridCard>
+      </Section>
 
-        <Section
-          anchor="footer"
-          theme="gold"
-          wrapper="true"
-          as="footer"
-          style={{ '--layout-section-min-height': 'auto !important' }}
-        >
-          <Link href={'https://github.com/harleysg'}>
-            <a target="_blank">By {author.name}</a>
-          </Link>
-        </Section>
-      </main>
+      <Section
+        anchor="footer"
+        theme="gold"
+        wrapper="true"
+        compact="true"
+        as="footer"
+        style={{ '--layout-section-min-height': 'auto !important' }}>
+        <Link href={'https://github.com/harleysg'} target="_blank">
+          By {author.name}
+        </Link>
+      </Section>
+    </main>
 
-      <Portal previousFocus={previousFocus} ref={portalRef} mounted={mountPortal} callback={() => closePortal({ status: false })}>
-        <p>Next Js Portal by LearnBestCoding</p>
-      </Portal>
+    <Portal previousFocus={previousFocus} ref={portalRef} mounted={mountPortal} callback={() => closePortal({ status: false })}>
+      <p>Next Js Portal by LearnBestCoding</p>
+    </Portal>
 
-      <div className="mouse-tracker" />
-    </>
-  )
+    <div className="mouse-tracker" />
+  </>
 }
 
 Home.propTypes = {

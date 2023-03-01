@@ -4,12 +4,14 @@
 
 .grid-cards {
   --dynamic-pos: 2ch;
+  --dynamic-columns-count: 47;
+  --dynamic-children-column-end: span 9;
 
   display: grid;
-  grid-template-columns: repeat(95, 3ch);
+  grid-template-columns: repeat(var(--dynamic-columns-count), 3ch);
   grid-auto-columns: 3ch;
   align-items: center;
-  gap: var(--dynamic-pos) 0;
+  gap: calc(var(--dynamic-pos) * 2) var(--dynamic-pos) ;
 
   padding: 10ch 0;
   overflow-x: auto;
@@ -17,27 +19,32 @@
 
   @include transition();
 
-  &:nth-child(2n) {
-    margin-top: 8ch;
-  }
+  // &:nth-child(2n) {
+  //   margin-top: 8ch;
+  // }
 
   /* ---------- Child --------- */
   > *:first-child,
   > *:nth-child(2n + 1) {
-    top: var(--dynamic-pos);
+    top:  calc(var(--dynamic-pos) * -.2);
   }
-
+  
   > *:nth-child(5n + 1) {
-    top: calc(var(--dynamic-pos) * -1);
+    top: calc(var(--dynamic-pos) * 0.5);
   }
 
-  > *:nth-child(10n + 1),
-  > *:first-child {
-    grid-column-start: 3;
+  > *:nth-child(10n + 1) {
+    grid-column-start: 4;
   }
+
+  > *:first-child {
+    top:  calc(var(--dynamic-pos) * -1);
+    grid-column-start: 2;
+  }
+
 
   > * {
-    grid-column-end: span 18;
+    grid-column-end: var(--dynamic-children-column-end);
 
     @include transition(200ms);
   }
