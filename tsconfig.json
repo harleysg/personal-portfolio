@@ -26,7 +26,8 @@
       "@/services/*": [ "shared/services/*" ],
       "@/utils/*": [ "utils/*" ],
       "@/hooks/*": [ "hooks/*" ]
-    }
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
