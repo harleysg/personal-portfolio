@@ -31,8 +31,8 @@ export default function CustomSlider({
         slides.map((slide) => (
           <div key={slide.id} className={`${styles['c-slider_custom-slide']}`}>
             <Image alt="" src={slide.url} width={1141} height={644} />
-            <Link href={slide.action}>
-              <a className={`${styles['c-slider_custom-btnAction']}`}>{slide.btnText}</a>
+            <Link href={slide.action} className={`${styles['c-slider_custom-btnAction']}`}>
+              {slide.btnText}
             </Link>
           </div>
         ))
