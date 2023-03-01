@@ -4,7 +4,7 @@ import ReactSlidy from 'react-slidy'
 import useMatchMedia from '../../hooks/useMatchMedia'
 import { ISlider } from '@/interface/index'
 
-export default function Slider ({
+export default function Slider({
   mediaQuery = ISlider.mediaQuery,
   className = ISlider.className,
   children = null,

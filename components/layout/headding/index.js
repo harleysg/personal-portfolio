@@ -2,7 +2,7 @@ import style from './headding.module.scss'
 import types from 'prop-types'
 import { IHeading } from '@/interface/index'
 
-export default function Headding ({ main = false, text = IHeading }) {
+export default function Headding({ main = false, text = IHeading }) {
   const { indicator, enfasis, content, space } = text
   const TagName = (props) => main ? <h1 {...props}>{props.children}</h1> : <h2 {...props}>{props.children}</h2>
 
@@ -19,7 +19,7 @@ export default function Headding ({ main = false, text = IHeading }) {
             </div>
           )}
         </TagName>
-        )
+      )
       : <></>
   )
 }
@@ -32,12 +32,12 @@ Headding.propTypes = {
   })
 }
 
-function HeaddingIndicator ({ text }) {
+function HeaddingIndicator({ text }) {
   return (
     <small className={style['c-section_headding-indicator']}>{text}</small>
   )
 }
 
-function HeaddingEnfasis ({ text }) {
+function HeaddingEnfasis({ text }) {
   return <span className={style['c-section_headding-enfasis']}>{text}</span>
 }

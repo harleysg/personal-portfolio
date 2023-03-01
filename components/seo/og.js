@@ -13,19 +13,19 @@ Object.entries(IOGData).forEach(([key]) => {
   key === 'description' && (IOGData.description = 'based on University project design Cudio Studio')
 })
 
-export default function OpenGraphProtocol (props) {
+export default function OpenGraphProtocol(props) {
   const { twitterOn = false } = props
   const og = { ...IOGData, ...props }
 
   return (
     <Head>
-      <meta property='og:description' content={og.description} key='description' />
-      <meta property='og:image' content={og.image?.url} key='image' />
-      <meta property='og:locale' content='es_CO' />
-      <meta property='og:locale:alternate' content='en_US' />
-      <meta property='og:title' content={og.title} key='title' />
-      <meta property='og:type' content={og.type} />
-      <meta property='og:url' content={og.url} key='url' />
+      <meta property="og:description" content={og.description} key="description" />
+      <meta property="og:image" content={og.image?.url} key="image" />
+      <meta property="og:locale" content="es_CO" />
+      <meta property="og:locale:alternate" content="en_US" />
+      <meta property="og:title" content={og.title} key="title" />
+      <meta property="og:type" content={og.type} />
+      <meta property="og:url" content={og.url} key="url" />
       {
         twitterOn && (
           <TwitterOG
@@ -40,7 +40,7 @@ export default function OpenGraphProtocol (props) {
   )
 }
 
-export function TwitterOG ({
+export function TwitterOG({
   site = '',
   title = '',
   description = '',
@@ -48,11 +48,11 @@ export function TwitterOG ({
 }) {
   return (
     <>
-      <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:description' content={description} />
-      <meta name='twitter:image' content={image} />
-      <meta name='twitter:site' content={site} />
-      <meta name='twitter:title' content={title} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+      <meta name="twitter:site" content={site} />
+      <meta name="twitter:title" content={title} />
     </>
   )
 }
