@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-:root {
+:root, html {
   --color_0_hsl: 0, 0%, 94%;
   --color-d_hsl: 0, 0%, 76%;
   --contrast_hsl: 0, 0%, 8%;
@@ -54,6 +54,10 @@
   --theme-scroll-track-bg: hsl(var(--contrast_hsl), 0.1);
   --theme-scroll-thumb-bg: hsl(var(--contrast_hsl), 0.1);
   --theme-scroll-thumb-bg-hover: hsl(var(--contrast_hsl), 0.5);
+
+  --theme-body-scroll-track-bg: hsl(var(--contrast_hsl), 0.1);
+  --theme-body-scroll-thumb-bg: var(--color-1);
+  --theme-body-scroll-thumb-bg-hover: hsl(var(--contrast_hsl), 0.5);
 
   --modal-border-size: 2px;
 
