@@ -42,7 +42,6 @@ export default function Card(props: CardProps) {
   return (
     <figure
       className={css.card}
-      style={{ gridColumnEnd: !image ? 'span 10' : null }}
     >
       <div className={css.card_content}>
         <figcaption className={css.card_caption}>

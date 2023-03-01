@@ -7,8 +7,14 @@ export default function GridCard({ children, ...props }) {
 
   useEffect(() => {
     const $el = $main.current
-    if ($el && !props['scroll-enable']) {
+    if ($el && props['scroll-enable']) {
       $el.scrollLeft = ($el.scrollWidth - $el.clientWidth) / 2.5
+    }
+    if ($el && props.colunms) {
+      $el.style.setProperty('--dynamic-columns-count', props.colunms)
+    }
+    if ($el && props['children-size']) {
+      $el.style.setProperty('--dynamic-children-column-end', props['children-size'])
     }
   }, [])
   return (
