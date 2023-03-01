@@ -2,7 +2,7 @@ function getScrollTop() {
   return window.pageYOffset !== undefined
     ? window.pageYOffset
     : (document.documentElement || document.body.parentNode || document.body)
-        .scrollTop
+      .scrollTop
 }
 
 function isAnyPartOfElementInViewport(el) {
@@ -23,7 +23,7 @@ function isAnyPartOfElementInViewport(el) {
 }
 
 const handleScrollMovement = (arrStringsDOMSelectors) => {
-  arrStringsDOMSelectors.map(({ selectors, callback }) => {
+  arrStringsDOMSelectors.forEach(({ selectors, callback }) => {
     if (selectors) {
       selectors.forEach((selector) => {
         const $elem = document.querySelectorAll(selector)

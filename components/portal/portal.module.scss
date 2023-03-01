@@ -1,0 +1,28 @@
+.overlay {
+  display: block;
+  position: fixed;
+  display: flex;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 200;
+  backdrop-filter: blur(var(--layout-header-blur-hover));
+  border: 0;
+}
+
+.body {
+  --shadow-width: 5px;
+  --shadow-blur: 6px;
+
+  width: 100%;
+  max-width: 90%;
+  min-height: 50vh;
+  margin: auto;
+  padding: 12px;
+  background-color: white;
+  box-shadow: 0 5px var(--shadow-blur) var(--shadow-width) var(--theme-scroll-track-bg);
+}
+

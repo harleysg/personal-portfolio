@@ -1,6 +1,6 @@
-export default function Video ({ poster, sources = [] }) {
+export default function Video({ poster, sources = [] }) {
   return (
-    <div className='c-video_wrapper'>
+    <div className="c-video_wrapper">
       <video poster={poster} controls>
         {
           sources && sources.map(source => (

@@ -6,17 +6,17 @@ import { IconRigth, IconLeft } from '../icons/arrow'
 import { ISlider } from '@/interface/index'
 import styles from './slider.module.scss'
 
-export default function CustomSlider ({
+export default function CustomSlider({
   className,
   mediaQuery = ISlider.mediaQuery,
   slides = ISlider.slides
 }) {
-  function CustomArrowLeft (props) {
-    return <CustomArrow {...props} emoji={<IconLeft />} className='arrowLeft' />
+  function CustomArrowLeft(props) {
+    return <CustomArrow {...props} emoji={<IconLeft />} className="arrowLeft" />
   }
 
-  function CustomArrowRight (props) {
-    return <CustomArrow {...props} emoji={<IconRigth />} className='arrowRight' />
+  function CustomArrowRight(props) {
+    return <CustomArrow {...props} emoji={<IconRigth />} className="arrowRight" />
   }
   return (
     <Slider
@@ -30,7 +30,7 @@ export default function CustomSlider ({
       {
         slides.map((slide) => (
           <div key={slide.id} className={`${styles['c-slider_custom-slide']}`}>
-            <Image alt='' src={slide.url} width={1141} height={644} />
+            <Image alt="" src={slide.url} width={1141} height={644} />
             <Link href={slide.action}>
               <a className={`${styles['c-slider_custom-btnAction']}`}>{slide.btnText}</a>
             </Link>
@@ -41,10 +41,10 @@ export default function CustomSlider ({
   )
 }
 
-function CustomArrow ({ emoji, className, ...props }) {
+function CustomArrow({ emoji, className, ...props }) {
   return (
     <button {...props} className={`${styles['c-slider_custom-arrowBtn']}`.concat(` ${className}`)}>
-      <span role='img' aria-label='Arrow'>
+      <span role="img" aria-label="Arrow">
         {emoji}
       </span>
     </button>

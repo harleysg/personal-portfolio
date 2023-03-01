@@ -5,12 +5,12 @@ import { IMenu } from '@/interface/index'
 
 import style from './_index.module.scss'
 
-export default function Header ({ menu }) {
+export default function Header({ menu }) {
   return (
     <header className={style['o-header']}>
       <div className={`o-wrapper ${style['o-header_wrapper']}`}>
         <span className={`${style['o-logo']}`}>
-          <Link href='#'>
+          <Link href="#">
             <a>
               <Avatar />
             </a>
@@ -31,7 +31,7 @@ Header.propTypes = {
   menu: IMenu
 }
 
-function Menu ({ menu = IMenu }) {
+function Menu({ menu = IMenu }) {
   return (
     menu && (
       <ul className={`${style['o-menu_options']}`}>
@@ -53,20 +53,20 @@ Menu.propTypes = {
   menu: IMenu
 }
 
-function Avatar (props) {
+function Avatar(props) {
   return <Image src={'/images/avatar.png'} width={64} height={78} {...props}/>
 }
 
-function BurguerSvg (props) {
+function BurguerSvg(props) {
   return (
     <svg
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 37.32 30.32'
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 37.32 30.32"
       {...props}
     >
       <title>menu</title>
-      <g data-name='Capa 3'>
-        <path d='M2.66 2.16h32v4h-32zM2.66 13.16h32v4h-32zM2.66 24.16h32v4h-32z' />
+      <g data-name="Capa 3">
+        <path d="M2.66 2.16h32v4h-32zM2.66 13.16h32v4h-32zM2.66 24.16h32v4h-32z" />
       </g>
     </svg>
   )

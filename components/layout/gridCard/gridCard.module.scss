@@ -1,0 +1,99 @@
+@mixin transition($time: 600ms) {
+  transition: transform $time ease-in-out;
+}
+
+.grid-cards {
+  --dynamic-pos: 2ch;
+
+  display: grid;
+  grid-template-columns: repeat(95, 3ch);
+  grid-auto-columns: 3ch;
+  align-items: center;
+  gap: var(--dynamic-pos) 0;
+
+  padding: 10ch 0;
+  overflow-x: auto;
+  transform: scale(0.98);
+
+  @include transition();
+
+  &:nth-child(2n) {
+    margin-top: 8ch;
+  }
+
+  /* ---------- Child --------- */
+  > *:first-child,
+  > *:nth-child(2n + 1) {
+    top: var(--dynamic-pos);
+  }
+
+  > *:nth-child(5n + 1) {
+    top: calc(var(--dynamic-pos) * -1);
+  }
+
+  > *:nth-child(10n + 1),
+  > *:first-child {
+    grid-column-start: 3;
+  }
+
+  > * {
+    grid-column-end: span 18;
+
+    @include transition(200ms);
+  }
+
+  /* ---------- Hover --------- */
+  &:hover {
+    &::-webkit-scrollbar-track {
+      background: var(--theme-scroll-track-bg);
+    }
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb {
+      background: var(--theme-scroll-thumb-bg-hover);
+    }
+  }
+
+  /* ---------- Scroll --------- */
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    height: 3px;
+    width: 0;
+    @include transition();
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    @include transition();
+    background-color: var(--theme-scroll-track-bg);
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    @include transition();
+    background: var(--theme-scroll-thumb-bg);
+  }
+}
+
+.scroll-enable {
+  --space-adjust: auto;
+
+  grid-template-columns: none;
+  display: flex;
+
+  > * {
+    top: 0 !important;
+  }
+
+  > *:nth-child(10n + 1),
+  > *:first-child {
+    grid-column-start: initial;
+  }
+
+  > *:first-child {
+    margin-left: var(--space-adjust);
+  }
+  > *:last-child {
+    margin-right: var(--space-adjust);
+  }
+}

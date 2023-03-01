@@ -1,29 +1,33 @@
 @charset "utf-8";
 
 .c- {
-    &mega_headding {
-        font-size: clamp(20em, 60vmin, 30em);
-        font-family: var(--font-medium);
-        color: var(--theme-mega-headding-color);
-        text-shadow: -25px 25px 40px rgba(var(--theme-mega-headding-shadow), 0.1);
-        position: relative;
-        user-select: none;
-        pointer-events: none;
-        white-space: nowrap;
-        
-        &-wrapper {
-            position: absolute;
-            z-index: 0;
-            top: auto;
-            bottom: -30px;
-            padding-left: 7vmin;
-            overflow: hidden;
-            width: 100%;
-            mix-blend-mode: overlay;
-        }
-
-        @media screen and (min-width: 40em) {
-            font-size: clamp(20em, 60vmin, 44em);
-        }
+  &mega_headding {
+    font-size: clamp(20em, 60vmin, 30em);
+    font-family: Poppins;
+    color: var(--theme-mega-headding-color);
+    text-shadow: -25px 25px 40px rgba(var(--theme-mega-headding-shadow), 0.1);
+    position: relative;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+    display: none;
+    
+    &-wrapper {
+      position: absolute;
+      z-index: 0;
+      top: auto;
+      bottom: -30px;
+      padding-left: 7vmin;
+      overflow: hidden;
+      width: 100%;
+      mix-blend-mode: overlay;
     }
+    
+    @media screen and (min-width: 40em) {
+      font-size: clamp(20em, 60vmin, 44em);
+    }
+    @media screen and (min-width: 57.6em) {
+      display: block;
+    }
+  }
 }

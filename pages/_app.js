@@ -12,7 +12,7 @@ import GoogleTagManager from '@/component/seo/gtm'
 import useMouse from 'hooks/useMouse'
 import useThemeSetector from 'hooks/useThemeSetector'
 
-function MyApp ({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   useMouse()
   useThemeSetector()
 

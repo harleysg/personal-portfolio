@@ -1,10 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default function handler () {
+export default function handler() {
   const menu = [
     { link: '/', text: 'Home' },
     { link: '#typography', text: 'typography' },
-    { link: '#form', text: 'forms' },
+    { link: '#form', text: 'forms' }
   ]
 
   const author = {
