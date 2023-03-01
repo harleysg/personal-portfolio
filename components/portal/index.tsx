@@ -45,8 +45,21 @@ export default forwardRef(
     }
 
     useEffect(() => {
-      setMounted(props.mounted)
-      isPortalMounted(props.mounted)
+      if (props.mounted) {
+        setMounted(props.mounted)
+        isPortalMounted(props.mounted)
+        setTimeout(() => {
+          dialogRef.current?.setAttribute('animate-fade-in', 'true')
+          dialogRef.current?.removeAttribute('animate-fade-out')
+        }, 210)
+      } else {
+        dialogRef.current?.setAttribute('animate-fade-out', 'true')
+        dialogRef.current?.removeAttribute('animate-fade-in')
+        setTimeout(() => {
+          setMounted(props.mounted)
+          isPortalMounted(props.mounted)
+        }, 810)
+      }
     }, [props.mounted])
 
     useEffect(() => {
@@ -61,8 +74,7 @@ export default forwardRef(
         <dialog data-portal-close className={css.overlay} onClick={e => unMountPortal(e)} ref={dialogRef}>
           <div tabIndex={-1}></div>
           <div className={css.body}>
-            <button data-portal-close ref={buttonRef} onClick={e => unMountPortal(e)}>x</button>
-            {props.previousFocus?.toString()}
+            <button data-portal-close ref={buttonRef}>x</button>
             <section>
               {props.children}
             </section>
